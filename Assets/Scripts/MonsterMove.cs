@@ -14,17 +14,34 @@ public class MonsterMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //if()
 		switch(MoveDirection)
         {
             case 0:
+                this.gameObject.transform.Translate(0, -1 * MonsterMoveSpeed[MonsID], 0);
+                break;
+
+            case 1:
+                this.gameObject.transform.Translate(MonsterMoveSpeed[MonsID],0 , 0);
+                break;
+
+            case 2:
+                this.gameObject.transform.Translate(-1 * MonsterMoveSpeed[MonsID], 0, 0);
+                break;
+
+            case 3:
                 this.gameObject.transform.Translate(0, MonsterMoveSpeed[MonsID], 0);
                 break;
+
+            case 4:
+                Destroy(this.gameObject);
+                break;
         }
+        //Debug.Log(MoveDirection);
 	}
 
-    void Move()
+    void OnTriggerEnter2D(Collider2D other)
     {
-
+        //Debug.Log("起動");
+        MoveDirection = other.gameObject.GetComponent<MoveChange>().ChangeDirection;
     }
 }

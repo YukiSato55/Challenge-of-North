@@ -23,7 +23,7 @@ public class SeiseiManager : MonoBehaviour {
 
     public void OnClick()
     {
-        GameObject MonsObject = (GameObject)Resources.Load("Monster_0");// +monsID);
-        GameObject cloneObject = Instantiate(MonsObject, SeiseiPos, Quaternion.identity);
+        GameObject MonsObject = (GameObject)Resources.Load("Prefab/Monster_1");// +monsID);
+        GameObject cloneObject = Instantiate(MonsObject, new Vector3(SeiseiPos.x, SeiseiPos.y, 0), Quaternion.identity);
     }
 }

@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\MonsterIDManager.cs" />
      <Compile Include="Assets\Scripts\MonsterMove.cs" />
+     <Compile Include="Assets\Scripts\MoveChange.cs" />
      <Compile Include="Assets\Scripts\SceneChange.cs" />
      <Compile Include="Assets\Scripts\SeiseiManager.cs" />
      <Compile Include="Assets\Unity-UIGradient-master\Assets\Scripts\SetDirty.cs" />
