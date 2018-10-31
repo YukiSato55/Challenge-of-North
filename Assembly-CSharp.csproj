@@ -53,11 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AlphaColor.cs" />
+     <Compile Include="Assets\Scripts\GaugePos.cs" />
+     <Compile Include="Assets\Scripts\GaugeValue.cs" />
      <Compile Include="Assets\Scripts\MonsterIDManager.cs" />
      <Compile Include="Assets\Scripts\MonsterMove.cs" />
+     <Compile Include="Assets\Scripts\MonsterStatus.cs" />
      <Compile Include="Assets\Scripts\MoveChange.cs" />
      <Compile Include="Assets\Scripts\SceneChange.cs" />
      <Compile Include="Assets\Scripts\SeiseiManager.cs" />
+     <Compile Include="Assets\Scripts\StatusDataBase.cs" />
      <Compile Include="Assets\Unity-UIGradient-master\Assets\Scripts\SetDirty.cs" />
      <Compile Include="Assets\Unity-UIGradient-master\Assets\Scripts\UICornersGradient.cs" />
      <Compile Include="Assets\Unity-UIGradient-master\Assets\Scripts\UIGradient.cs" />
