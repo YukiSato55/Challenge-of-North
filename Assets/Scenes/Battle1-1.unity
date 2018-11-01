@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 190432349}
   - component: {fileID: 190432348}
   m_Layer: 5
-  m_Name: Button
+  m_Name: test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 305}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190432348
@@ -1480,7 +1480,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: test
 --- !u!222 &1214695573
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1575,11 +1575,6 @@ Prefab:
       propertyPath: Database
       value: 
       objectReference: {fileID: 2038307035}
-    - target: {fileID: 114797903903068180, guid: 41fc2f5b75c21ba4dba97c5aff9f6e06,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41fc2f5b75c21ba4dba97c5aff9f6e06, type: 2}
   m_IsPrefabAsset: 0

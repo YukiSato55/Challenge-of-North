@@ -30,7 +30,10 @@ public class MonsterStatus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(MonsHP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     public void MonsDamage(float ATK)
