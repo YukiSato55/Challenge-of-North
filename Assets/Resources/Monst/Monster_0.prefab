@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MonsHP: 0
   MonsATK: 0
-  Database: {fileID: 0}
+  Database: {fileID: 1743793073891600, guid: ac19d33bb54b5ed43b66931f3c1fd904, type: 2}
 --- !u!114 &114129346906266984
 MonoBehaviour:
   m_ObjectHideFlags: 1
