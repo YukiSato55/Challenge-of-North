@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114040217324165358}
   m_Layer: 5
   m_Name: Back
-  m_TagString: Untagged
+  m_TagString: Move
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
