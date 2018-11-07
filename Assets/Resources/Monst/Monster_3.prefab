@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4320424811553554}
   - component: {fileID: 212112097445556560}
   - component: {fileID: 95141527196918506}
+  - component: {fileID: 114801119117825064}
+  - component: {fileID: 114351979750149482}
+  - component: {fileID: 114484735937482060}
   - component: {fileID: 61788674576748620}
   - component: {fileID: 50846372567931432}
   m_Layer: 8
@@ -106,6 +109,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114351979750149482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263870090591756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c6cd42796f09049a8702ddab00b480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114484735937482060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263870090591756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b230775d321ff64eb68d837ee387ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsHP: 0
+  MonsATK: 0
+  Database: {fileID: 1743793073891600, guid: ac19d33bb54b5ed43b66931f3c1fd904, type: 2}
+--- !u!114 &114801119117825064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263870090591756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55ad870d4d06d8409c724aefb43995e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterID: 3
 --- !u!212 &212112097445556560
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4368868016698884}
   - component: {fileID: 212239457790367928}
   - component: {fileID: 95067110707689220}
-  - component: {fileID: 114876131959959266}
   - component: {fileID: 114120747379980114}
+  - component: {fileID: 114876131959959266}
+  - component: {fileID: 114289690837729052}
   - component: {fileID: 61949350298854000}
   - component: {fileID: 50980994153513622}
   m_Layer: 8
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterID: 1
+--- !u!114 &114289690837729052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245269772064740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b230775d321ff64eb68d837ee387ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsHP: 0
+  MonsATK: 0
+  Database: {fileID: 1743793073891600, guid: ac19d33bb54b5ed43b66931f3c1fd904, type: 2}
 --- !u!114 &114876131959959266
 MonoBehaviour:
   m_ObjectHideFlags: 1

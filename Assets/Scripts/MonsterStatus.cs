@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterStatus : MonoBehaviour {
+	private Renderer renderer;
     private int MonsID, Rank;
+
     public float MonsHP, MonsATK;
 
     [SerializeField]
     private GameObject Database;
     private GaugeValue gaugeValue;
+
+	// Use this for initialization
+	void Start () {
+		renderer = GetComponent<Renderer>();
+		//GameClearText.SetActive(false);
+	}
 
 	// Use this for initialization
 	void Awake () { // AwakeじゃないとsliderのStartに反映されない
@@ -38,7 +46,23 @@ public class MonsterStatus : MonoBehaviour {
 
     public void MonsDamage(float ATK)
     {
+		StartCoroutine ("Damage");
         MonsHP -= 5;
         gaugeValue.GaugeDamage();
     }
+	IEnumerator Damage (){
+
+		int count = 10;
+		while (count > 0) {
+			//透明にする
+			renderer.material.color = new Color (1, 1, 1, 0);
+			//0.06秒待つ
+			yield return new WaitForSeconds(0.06f);
+			//元に戻す
+			renderer.material.color = new Color(1,1,1,1);
+			//0.06秒待つ
+			yield return new WaitForSeconds(0.06f);
+			count--;
+		}
+	}
 }
