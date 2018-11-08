@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class EnemyAttackRange : MonoBehaviour
 {
-    private GameObject nearObj;         //最も近いオブジェクト
+    private GameObject nearObj;//最も近いオブジェクト
+
+    [SerializeField]
+    private float range = 2f; // 攻撃範囲
     private float searchTime = 0;    //経過時間
-    private CircleCollider2D circleCollider;
+    WeaponSeisei weaponSeisei;
 
     // Use this for initialization
     void Start()
     {
-        circleCollider = this.GetComponent<CircleCollider2D>();
+        weaponSeisei = this.GetComponentInChildren<WeaponSeisei>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         //経過時間を取得
@@ -24,7 +27,9 @@ public class EnemyAttackRange : MonoBehaviour
         if (searchTime >= 1.0f)
         {
             //最も近かったオブジェクトを取得
-            nearObj = serchTag(gameObject, "Player");
+            Debug.Log("動いとる");
+            nearObj = serchTag(gameObject, "Monster");
+            weaponSeisei.AngleSeisei(nearObj);
 
             //経過時間を初期化
             searchTime = 0;
@@ -61,6 +66,9 @@ public class EnemyAttackRange : MonoBehaviour
         }
         //最も近かったオブジェクトを返す
         //return GameObject.Find(nearObjName);
+        Debug.Log(targetObj.transform.position);
         return targetObj;
     }
+
+
 }
