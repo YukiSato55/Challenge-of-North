@@ -15,7 +15,7 @@ public class MonsterMove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		switch(MoveDirection)
         {
             case 0:
@@ -41,8 +41,9 @@ public class MonsterMove : MonoBehaviour {
         //Debug.Log(MoveDirection);
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
+        //Debug.Log(other.gameObject.name);
         //Debug.Log("起動"); 後で移動ブロックにタグ付けし、条件指定。
         MoveDirection = other.gameObject.GetComponent<MoveChange>().ChangeDirection;
     }
