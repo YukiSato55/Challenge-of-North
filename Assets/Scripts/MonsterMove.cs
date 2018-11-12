@@ -7,7 +7,7 @@ public class MonsterMove : MonoBehaviour {
     private int MoveDirection = 0; // 動く方向 0：正面、1：右、2：左、3：後退
 	private Animator animator;
     
-    // ID順　0から
+    // ID順　0から17
     private float[] MonsterMoveSpeed = {0.01f, 0.015f, 0.035f,0.02f,0.02f,0.015f,0.02f,0.025f,0.025f,0.015f,0.02f,0.01f,0.01f,0.02f,0.025f,0.015f,0.02f,0.03f};   
 
 	// Use this for initialization
