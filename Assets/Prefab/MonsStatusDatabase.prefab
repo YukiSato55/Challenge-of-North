@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224967117927040524}
   - component: {fileID: 114712714186819002}
-  - component: {fileID: 114582896244456320}
   m_Layer: 5
   m_Name: MonsStatusDatabase
   m_TagString: Untagged
@@ -28,17 +27,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114582896244456320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1743793073891600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f030a2e93f62241b46fa2e3db221f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114712714186819002
 MonoBehaviour:
   m_ObjectHideFlags: 1
