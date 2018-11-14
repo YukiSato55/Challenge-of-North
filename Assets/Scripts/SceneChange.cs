@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//画面遷移スクリプト
 public class SceneChange : MonoBehaviour {
 
 	// Use this for initialization

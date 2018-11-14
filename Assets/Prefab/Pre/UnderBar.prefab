@@ -273,7 +273,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114803398993681864, guid: b054fce247265c54ea3c48c365e2d871,
+      - m_Target: {fileID: 114803398993681864, guid: 89efc8f8a502fc344bd17f70dd432717,
           type: 2}
         m_MethodName: GOMenu
         m_Mode: 1
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114803398993681864, guid: b054fce247265c54ea3c48c365e2d871,
+      - m_Target: {fileID: 114803398993681864, guid: 89efc8f8a502fc344bd17f70dd432717,
           type: 2}
         m_MethodName: Upgrade
         m_Mode: 1
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114803398993681864, guid: b054fce247265c54ea3c48c365e2d871,
+      - m_Target: {fileID: 114803398993681864, guid: 89efc8f8a502fc344bd17f70dd432717,
           type: 2}
         m_MethodName: Stageselect
         m_Mode: 1
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114803398993681864, guid: b054fce247265c54ea3c48c365e2d871,
+      - m_Target: {fileID: 114803398993681864, guid: 89efc8f8a502fc344bd17f70dd432717,
           type: 2}
         m_MethodName: GoHome
         m_Mode: 1

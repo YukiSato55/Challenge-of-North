@@ -46,10 +46,13 @@ public class MonsterStatus : MonoBehaviour {
 
     public void MonsDamage(float ATK)
     {
-		StartCoroutine ("Damage");
         MonsHP -= 5;
+		//ダメージを受けたら点滅
+		StartCoroutine ("Damage");
         gaugeValue.GaugeDamage();
     }
+
+	//点滅の処理
 	IEnumerator Damage (){
 
 		int count = 10;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//生成スクリプト
 public class SeiseiManager : MonoBehaviour {
     private Vector3 SeiseiPos;
     private Vector3 pos;

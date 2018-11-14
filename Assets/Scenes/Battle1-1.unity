@@ -806,6 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3.5
+  ATKTime: 0
 --- !u!50 &579500271
 Rigidbody2D:
   serializedVersion: 4
