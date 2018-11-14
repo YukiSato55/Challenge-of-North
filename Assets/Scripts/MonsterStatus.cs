@@ -32,6 +32,7 @@ public class MonsterStatus : MonoBehaviour {
 	void Update () {
 		if(MonsHP <= 0)
         {
+
             Destroy(this.gameObject);
         }
 	}
