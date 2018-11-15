@@ -7,8 +7,6 @@ TagManager:
   - Monster
   - Enemy
   - Move
-  - Weapon
-  - Goal
   layers:
   - Default
   - TransparentFX
