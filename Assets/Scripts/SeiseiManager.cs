@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//生成スクリプト
+//生成スクリプトUnity
 public class SeiseiManager : MonoBehaviour {
     private Vector3 SeiseiPos;
     private Vector3 pos;
     private int monsID;
+
+	public Canvas canvas;
 
 	// Use this for initialization
 	void Start () {
@@ -26,5 +28,6 @@ public class SeiseiManager : MonoBehaviour {
     {
         GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_0");// +monsID);
         GameObject cloneObject = Instantiate(MonsObject, new Vector3(SeiseiPos.x, SeiseiPos.y, 0), Quaternion.identity);
+		cloneObject.gameObject.transform.parent = canvas.transform;
     }
 }
