@@ -32,10 +32,9 @@ public class WeaponSeisei : MonoBehaviour {
 	void FixedUpdate () {
         if (this.name.Contains("(Clone)"))
         {
-            Debug.Log(basePos + "突撃" + EnemyPos);
             transform.position = Vector3.MoveTowards(transform.position, EnemyPos, speed);
-            Debug.Log(this.transform.position);
-            if(basePos == EnemyPos)
+            Debug.Log(basePos + "突撃" + EnemyPos);
+            if (transform.position == EnemyPos)
             {
                 Destroy(this.gameObject);
             }
@@ -47,9 +46,10 @@ public class WeaponSeisei : MonoBehaviour {
     {
         if(!this.name.Contains("(Clone)"))
         {
-            Instantiate(this, new Vector3(basePos.x, basePos.y, basePos.z), Quaternion.identity);
             Vector3 diff = (Pos.gameObject.transform.position - this.transform.position);
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);
+            Instantiate(this, new Vector3(basePos.x, basePos.y, basePos.z), transform.rotation);
+
             Debug.Log(eee + " " + EnemyPos);
 
         }
