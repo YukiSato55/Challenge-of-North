@@ -7,7 +7,8 @@ public class EnemyAttackRange : MonoBehaviour
     private GameObject nearObj;//最も近いオブジェクト
 
     [SerializeField]
-    private float range, ATKTime; // 攻撃範囲
+    private float range, ATKTime; // 攻撃範囲, 攻撃間隔
+    private float ATKchargeTime; // 攻撃間隔計測時間
     private float searchTime = 0;    //経過時間
     private float radian, degree; // ラジアン、角度
     float tmpDis = 0;           //距離用一時変数
@@ -21,6 +22,7 @@ public class EnemyAttackRange : MonoBehaviour
     void Start()
     {
         weaponSeisei = this.GetComponentInChildren<WeaponSeisei>();
+        ATKchargeTime = ATKTime;
     }
 
     // Update is called once per frame
@@ -28,7 +30,7 @@ public class EnemyAttackRange : MonoBehaviour
     {
         //経過時間を取得
         searchTime += Time.deltaTime;
-        ATKTime -= Time.deltaTime;
+        ATKchargeTime -= Time.deltaTime;
 
         if (searchTime >= 0.5f)
         {
@@ -54,9 +56,10 @@ public class EnemyAttackRange : MonoBehaviour
             searchTime = 0;
         }
 
-        if(ATKTime <= 0 && targetObj)
+        if(ATKchargeTime <= 0 && nearDis <= range)
         {
             weaponSeisei.Shot(targetObj);
+            ATKchargeTime = ATKTime;
         }
 
         //対象の位置の方向を向く
@@ -77,12 +80,12 @@ public class EnemyAttackRange : MonoBehaviour
         {
             //自身と取得したオブジェクトの距離を取得
             tmpDis = Vector3.Distance(obs.transform.position, nowObj.transform.position);
-            Debug.Log(tmpDis + "  " + range);
+            //Debug.Log(tmpDis + "  " + range);
 
             //オブジェクトの距離が近いか、距離0であればオブジェクト名を取得
             if (nearDis == 0 || nearDis > tmpDis && tmpDis <= range)
             {
-                Debug.Log("入っとる");
+                //Debug.Log("入っとる");
                 //一時変数に距離を格納
                 nearDis = tmpDis;
 
@@ -111,6 +114,11 @@ public class EnemyAttackRange : MonoBehaviour
         degree = radian * Mathf.Rad2Deg;
 
         //Debug.Log("角度" + degree);
+    }
+
+    public GameObject getTargetObj()
+    {
+        return targetObj;
     }
 
 }
