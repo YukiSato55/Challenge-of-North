@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efca6bb367ccff54181f73c5b13e0f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 623297335}
 --- !u!1 &377771920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,6 +1606,10 @@ Prefab:
     - target: {fileID: 4912862967661632, guid: a0eaa79aead579542ab1ab35b6486562, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596958519008554, guid: a0eaa79aead579542ab1ab35b6486562, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0eaa79aead579542ab1ab35b6486562, type: 2}
@@ -3154,6 +3159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec62c4a8dffcc644bb79b2135fbc4a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   thisobj: {fileID: 579500265}
   speed: 0.3
 --- !u!61 &1638708869
@@ -3213,6 +3219,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+
 --- !u!1001 &1773594984
 Prefab:
   m_ObjectHideFlags: 0
