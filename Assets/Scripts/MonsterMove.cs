@@ -53,8 +53,13 @@ public class MonsterMove : MonoBehaviour {
     {
         //Debug.Log(other.gameObject.name);
         //Debug.Log("起動"); 後で移動ブロックにタグ付けし、条件指定。
-        MoveDirection = other.gameObject.GetComponent<MoveChange>().ChangeDirection;
-		animator.SetInteger ("MoveChange", MoveDirection);
+        switch(other.tag)
+        {
+            case "Move":
+                MoveDirection = other.gameObject.GetComponent<MoveChange>().ChangeDirection;
+                animator.SetInteger("MoveChange", MoveDirection);
+                break;
 
+        }
     }
 }
