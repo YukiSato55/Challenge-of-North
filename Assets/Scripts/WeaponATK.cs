@@ -16,7 +16,6 @@ public class WeaponATK : MonoBehaviour {
 	void Update () {
 		
 	}
-
     void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.tag)
