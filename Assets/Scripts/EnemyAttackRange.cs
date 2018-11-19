@@ -41,7 +41,10 @@ public class EnemyAttackRange : MonoBehaviour
             {
                 //最も近かったオブジェクトを取得
                 nearObj = serchTag(gameObject, "Monster");
-                AngleSeisei(nearObj);
+                if (nearObj)
+                {
+                    AngleSeisei(nearObj);
+                }
             } else
             {
                 // 射程範囲外
