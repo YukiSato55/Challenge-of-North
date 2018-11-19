@@ -16,17 +16,15 @@ public class WeaponATK : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-		Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        switch(other.tag)
+        switch (other.gameObject.tag)
         {
-		case "Monster":
-			monsterStatus = other.GetComponent<MonsterStatus> ();
-			monsterStatus.MonsDamage (ATK);
-
-                Destroy(this.gameObject);
-                break;
+            case "Monster":
+                monsterStatus = other.gameObject.GetComponent<MonsterStatus>();
+            monsterStatus.MonsDamage(ATK);
+            Destroy(this.gameObject);
+            break;
         }
     }
 }
