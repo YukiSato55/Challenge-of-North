@@ -50,8 +50,6 @@ public class WeaponSeisei : MonoBehaviour {
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);
             Instantiate(this, new Vector3(basePos.x, basePos.y, basePos.z), transform.rotation);
 
-            Debug.Log(eee + " " + EnemyPos);
-
         }
     }
 }
