@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &190432347
 RectTransform:
   m_ObjectHideFlags: 0
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 579500270}
   - component: {fileID: 579500271}
   m_Layer: 0
-  m_Name: Dra_3
+  m_Name: King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1261,7 +1261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2, y: -4}
+  m_AnchoredPosition: {x: -2.02, y: -4.32}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &912158173
@@ -1607,10 +1607,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1596958519008554, guid: a0eaa79aead579542ab1ab35b6486562, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0eaa79aead579542ab1ab35b6486562, type: 2}
   m_IsPrefabAsset: 0
@@ -1711,7 +1707,7 @@ Prefab:
     - target: {fileID: 224876749412120286, guid: 8333a079554e894408b0cbeabb38f71c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 224876749412120286, guid: 8333a079554e894408b0cbeabb38f71c,
         type: 2}
@@ -3159,7 +3155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec62c4a8dffcc644bb79b2135fbc4a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   thisobj: {fileID: 579500265}
   speed: 0.3
 --- !u!61 &1638708869
@@ -3219,7 +3214,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-
 --- !u!1001 &1773594984
 Prefab:
   m_ObjectHideFlags: 0
@@ -3275,7 +3269,7 @@ Prefab:
     - target: {fileID: 224287569901963552, guid: ec75332a8b421ab41a075dd62643803a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1.9000244
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 224287569901963552, guid: ec75332a8b421ab41a075dd62643803a,
         type: 2}
@@ -3552,7 +3546,7 @@ Prefab:
     - target: {fileID: 224696945827826746, guid: 269698d6022bc2c4da4a05c9d889c86a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -9.5
+      value: -9.4
       objectReference: {fileID: 0}
     - target: {fileID: 224696945827826746, guid: 269698d6022bc2c4da4a05c9d889c86a,
         type: 2}
