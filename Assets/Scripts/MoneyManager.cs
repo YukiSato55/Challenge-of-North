@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoneyManager : MonoBehaviour {
     private int Money, MaxMoney;
@@ -10,7 +11,11 @@ public class MoneyManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(PlayerPrefs.HasKey("Money"))
+        if (SceneManager.GetActiveScene().name == "home")
+        {
+            moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
+        }
+        if (PlayerPrefs.HasKey("Money"))
         {
             Money = PlayerPrefs.GetInt("Money");
             MaxMoney = PlayerPrefs.GetInt("MaxMoney");
@@ -31,7 +36,6 @@ public class MoneyManager : MonoBehaviour {
 
     public void TouchGetMoney(int GetMoney)
     {
-        moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
         Money += GetMoney;
         if (Money > MaxMoney) Money = MaxMoney;
         PlayerPrefs.SetInt("Money", Money);
@@ -42,5 +46,17 @@ public class MoneyManager : MonoBehaviour {
     {
         MaxMoney += 500;
         PlayerPrefs.SetInt("MaxMoney", MaxMoney);
+    }
+
+    public void BuyMons(int MonsPrice)
+    {
+        moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
+        if (Money >= MonsPrice) //　買える
+        {
+            Money -= MonsPrice;
+        } else　　　　　　　　　// 買えない
+        {
+
+        }
     }
 }
