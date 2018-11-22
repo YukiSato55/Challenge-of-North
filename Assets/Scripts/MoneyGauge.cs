@@ -4,20 +4,72 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MoneyGauge : MonoBehaviour {
-    private float MoneyValue;
+    private float MoneyValue, nowmoney;
+    private int onePlus; // ゲージの1フレーム増加量管理
+    private MoneyManager moneyManager;
+    private Slider slider;
+    private bool checkflug;
+
+    const int PLUS_MONEY = 1;
+    const int STAY = 0;
+    private int phase;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        //moneyManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
+        slider = GetComponent<Slider>();
+        phase = STAY;
+        slider.maxValue = (float)PlayerPrefs.GetInt("MaxMoney");
+        slider.value = (float)PlayerPrefs.GetInt("Money");
+        nowmoney = (float)PlayerPrefs.GetInt("Money");
+        checkflug = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+		switch(phase)
+        {
+            case PLUS_MONEY:
+                if (checkflug) {
+                    onePlus = (int)(nowmoney / 10);
+                    switch (onePlus) {
+                        case 0:
+                            slider.value += 1f;
+                            nowmoney -= 1f;
+                            if (nowmoney == 0) checkflug = false;
+                            break;
+                        default:
+                            Debug.Log(slider.value);
+                            slider.value += 10f;
+                            nowmoney -= 10f;
+                            if (nowmoney == 0) checkflug = false;
+                            break;
+                    }
+                } else
+                {
+                    checkflug = false;
+                    phase = STAY;
+                }
+                break;
+            
+        }
 	}
 
-    public void UpDateGauge()
-    {
+    public void UpDateGauge(int money, int Update) // お金ゲージ更新処理
+    {                             //０：最大値　１：お金ゲット
+        float moneyval = (float)money;
+        switch(Update)
+        {
+            case 0:
+                slider.maxValue = moneyval;
+                break;
 
+            case 1:
+                nowmoney = moneyval;
+                phase = PLUS_MONEY;
+                checkflug = true;
+                break;
+        }
     }
 }

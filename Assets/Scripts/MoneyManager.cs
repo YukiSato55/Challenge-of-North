@@ -10,17 +10,15 @@ public class MoneyManager : MonoBehaviour {
     private GameObject MoneyGaugeSlider;
 
 	// Use this for initialization
-	void Start () {
-        if (SceneManager.GetActiveScene().name == "home")
-        {
-            moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
-        }
-        if (PlayerPrefs.HasKey("Money"))
+	void Awake () {
+
+        moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
+        if (PlayerPrefs.HasKey("Money")) // セーブデータ存在
         {
             Money = PlayerPrefs.GetInt("Money");
             MaxMoney = PlayerPrefs.GetInt("MaxMoney");
-            PlayerPrefs.SetInt("MaxMoney", MaxMoney);
-        } else
+            //PlayerPrefs.SetInt("MaxMoney", MaxMoney);
+        } else         // セーブデータ無
         {
             Money = 0;
             MaxMoney = 1000;
@@ -36,16 +34,18 @@ public class MoneyManager : MonoBehaviour {
 
     public void TouchGetMoney(int GetMoney)
     {
-        Money += GetMoney;
+        Debug.Log("ugoita");
+        Money += 100;
         if (Money > MaxMoney) Money = MaxMoney;
         PlayerPrefs.SetInt("Money", Money);
-        moneyGauge.UpDateGauge();
+        moneyGauge.UpDateGauge(100, 1);
     }
 
     public void UpGradeMaxMoney()
     {
         MaxMoney += 500;
         PlayerPrefs.SetInt("MaxMoney", MaxMoney);
+        moneyGauge.UpDateGauge(MaxMoney, 0);
     }
 
     public void BuyMons(int MonsPrice)
@@ -54,9 +54,10 @@ public class MoneyManager : MonoBehaviour {
         if (Money >= MonsPrice) //　買える
         {
             Money -= MonsPrice;
+            // モンスターのカウント増加処理も書こう
         } else　　　　　　　　　// 買えない
         {
-
+            Debug.Log("買えない");
         }
     }
 }
