@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MoneyManager : MonoBehaviour {
-    private int Money, MaxMoney;
+    private float Money, MaxMoney;
     private MoneyGauge moneyGauge;
     [SerializeField]
     private GameObject MoneyGaugeSlider;
@@ -15,15 +15,15 @@ public class MoneyManager : MonoBehaviour {
         moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
         if (PlayerPrefs.HasKey("Money")) // セーブデータ存在
         {
-            Money = PlayerPrefs.GetInt("Money");
-            MaxMoney = PlayerPrefs.GetInt("MaxMoney");
+            Money = PlayerPrefs.GetFloat("Money");
+            MaxMoney = PlayerPrefs.GetFloat("MaxMoney");
             //PlayerPrefs.SetInt("MaxMoney", MaxMoney);
         } else         // セーブデータ無
         {
             Money = 0;
             MaxMoney = 1000;
-            PlayerPrefs.SetInt("Money", Money);
-            PlayerPrefs.SetInt("MaxMoney", MaxMoney);
+            PlayerPrefs.SetFloat ("Money", Money);
+            PlayerPrefs.SetFloat("MaxMoney", MaxMoney);
         }
 	}
 	
@@ -32,23 +32,22 @@ public class MoneyManager : MonoBehaviour {
 		
 	}
 
-    public void TouchGetMoney(int GetMoney)
+    public void TouchGetMoney(float GetMoney)
     {
-        Debug.Log("ugoita");
-        Money += 100;
+        Money += GetMoney;
         if (Money > MaxMoney) Money = MaxMoney;
-        PlayerPrefs.SetInt("Money", Money);
+        PlayerPrefs.SetFloat("Money", Money);
         moneyGauge.UpDateGauge(100, 1);
     }
 
     public void UpGradeMaxMoney()
     {
         MaxMoney += 500;
-        PlayerPrefs.SetInt("MaxMoney", MaxMoney);
+        PlayerPrefs.SetFloat("MaxMoney", MaxMoney);
         moneyGauge.UpDateGauge(MaxMoney, 0);
     }
 
-    public void BuyMons(int MonsPrice)
+    public void BuyMons(float MonsPrice)
     {
         moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
         if (Money >= MonsPrice) //　買える

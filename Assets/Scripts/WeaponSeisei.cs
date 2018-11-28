@@ -8,6 +8,7 @@ public class WeaponSeisei : MonoBehaviour {
     private float time = 0;
 
     [SerializeField]
+    [Header("親obj敵キャラ")]
     private GameObject thisobj;
     [SerializeField]
     private float speed;
