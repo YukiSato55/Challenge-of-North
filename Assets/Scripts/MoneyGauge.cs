@@ -19,9 +19,9 @@ public class MoneyGauge : MonoBehaviour {
         //moneyManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
         slider = GetComponent<Slider>();
         phase = STAY;
-        slider.maxValue = (float)PlayerPrefs.GetInt("MaxMoney");
-        slider.value = (float)PlayerPrefs.GetInt("Money");
-        nowmoney = (float)PlayerPrefs.GetInt("Money");
+        slider.maxValue = PlayerPrefs.GetFloat("MaxMoney");
+        slider.value = PlayerPrefs.GetFloat("Money");
+        nowmoney = PlayerPrefs.GetFloat("Money");
         checkflug = false;
 
     }
@@ -56,9 +56,9 @@ public class MoneyGauge : MonoBehaviour {
         }
 	}
 
-    public void UpDateGauge(int money, int Update) // お金ゲージ更新処理
+    public void UpDateGauge(float money, int Update) // お金ゲージ更新処理
     {                             //０：最大値　１：お金ゲット
-        float moneyval = (float)money;
+        float moneyval = money;
         switch(Update)
         {
             case 0:
