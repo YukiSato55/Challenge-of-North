@@ -9,9 +9,24 @@ public class SeiseiManager : MonoBehaviour {
     private int monsID;
 
 	public Canvas canvas;
+	//public int ID = 99;
+	int id = 99;
+	int a = 0;
+	private int ID
+	{
+		set {
+			Debug.Log (value + " set");
+			this.id = value; }
+		get {
+			Debug.Log (this.id + " get");
+			return this.id; }
+	}
+
+	//public int id;
 
 	// Use this for initialization
 	void Start () {
+		ID = id;
         pos = this.transform.position;
         //Debug.Log("test" + Camera.main.ScreenToWorldPoint(pos));
 
@@ -21,13 +36,28 @@ public class SeiseiManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Resources.UnloadUnusedAssets();
+		Debug.Log ("a:" + a);
+       // Resources.UnloadUnusedAssets();
+
     }
 
     public void OnClick()
     {
-        GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_17");// +monsID);
-        GameObject cloneObject = Instantiate(MonsObject, new Vector3(SeiseiPos.x, SeiseiPos.y, 0), Quaternion.identity);
-		cloneObject.gameObject.transform.parent = canvas.transform;
+       // GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_" + ID);// +monsID);
+       // GameObject cloneObject = Instantiate(MonsObject, new Vector3(SeiseiPos.x, SeiseiPos.y, 0), Quaternion.identity);
+		//cloneObject.gameObject.transform.parent = canvas.transform;
     }
+
+	//キャラ選択
+	public void Change(int num){
+		a++;
+		Debug.Log ("a " + a);
+		Debug.Log (id);
+		ID = num;
+		Debug.Log (id);
+		//Debug.Log (ID + ":" + num);
+		//ID = num;
+		//Debug.Log (ID + ":" + num);
+	}
+
 }
