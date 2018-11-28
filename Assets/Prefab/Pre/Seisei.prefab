@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efca6bb367ccff54181f73c5b13e0f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posn: {fileID: 1684939009834724, guid: e6004ef54a2b04747909fcb0315dec61, type: 2}
   canvas: {fileID: 0}
-  ID: 0
