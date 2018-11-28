@@ -43,9 +43,11 @@ public class SeiseiManager : MonoBehaviour {
 
     public void OnClick()
     {
+
        // GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_" + ID);// +monsID);
        // GameObject cloneObject = Instantiate(MonsObject, new Vector3(SeiseiPos.x, SeiseiPos.y, 0), Quaternion.identity);
 		//cloneObject.gameObject.transform.parent = canvas.transform;
+
     }
 
 	//キャラ選択
