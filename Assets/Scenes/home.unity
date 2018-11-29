@@ -581,7 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FormMoney: 30
   Max: 500
-  gameObject: {fileID: 0}
+  Tenant: {fileID: 711865929}
 --- !u!1 &162200063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1629,7 @@ GameObject:
   - component: {fileID: 711865930}
   - component: {fileID: 711865932}
   - component: {fileID: 711865931}
+  - component: {fileID: 711865933}
   m_Layer: 0
   m_Name: TouchMoneyonT1
   m_TagString: Untagged
@@ -1690,6 +1691,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 711865929}
   m_CullTransparentMesh: 0
+--- !u!114 &711865933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711865929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7b28a4e8573424784a10e803c2a4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  man: {fileID: 162200065}
+  oku: {fileID: 2145609546}
 --- !u!1 &796310976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2529,7 @@ GameObject:
   - component: {fileID: 1436795923}
   - component: {fileID: 1436795925}
   - component: {fileID: 1436795924}
+  - component: {fileID: 1436795926}
   m_Layer: 0
   m_Name: TouchMoneyonT2
   m_TagString: Untagged
@@ -2576,6 +2591,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1436795922}
   m_CullTransparentMesh: 0
+--- !u!114 &1436795926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436795922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7b28a4e8573424784a10e803c2a4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  man: {fileID: 1531761073}
+  oku: {fileID: 333343303}
 --- !u!1 &1502364895
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,6 +2801,7 @@ GameObject:
   - component: {fileID: 1545110775}
   - component: {fileID: 1545110774}
   - component: {fileID: 1545110773}
+  - component: {fileID: 1545110776}
   m_Layer: 5
   m_Name: Tenant2
   m_TagString: Untagged
@@ -2873,6 +2902,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1545110771}
   m_CullTransparentMesh: 0
+--- !u!114 &1545110776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545110771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493e8c332228b384aae4c81667b1196e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FormMoney: 100
+  Max: 1000
+  Tenant: {fileID: 1436795922}
 --- !u!1 &1895061765
 GameObject:
   m_ObjectHideFlags: 0
