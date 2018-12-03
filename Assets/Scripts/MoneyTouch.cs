@@ -20,7 +20,6 @@ public class MoneyTouch : MonoBehaviour {
 
     public void UpdateDisplay(float Nowmoney, float Max)
     {
-        Debug.Log("touch");
         MoneyPercent = Nowmoney / Max;
         if(MoneyPercent >= 0.6f)
         {
@@ -35,6 +34,5 @@ public class MoneyTouch : MonoBehaviour {
             oku.interactable = false;
             man.interactable = false;
         }
-        
     }
 }

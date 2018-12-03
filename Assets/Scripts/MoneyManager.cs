@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class MoneyManager : MonoBehaviour {
     private float Money, MaxMoney;
     private MoneyGauge moneyGauge;
+    private MoneyText moneyText;
     [SerializeField]
-    private GameObject MoneyGaugeSlider;
+    private GameObject MoneyGaugeSlider, MoneyGaugeText;
 
 	// Use this for initialization
 	void Awake () {
 
         moneyGauge = MoneyGaugeSlider.GetComponent<MoneyGauge>();
+        moneyText = MoneyGaugeText.GetComponent<MoneyText>();
         if (PlayerPrefs.HasKey("Money")) // セーブデータ存在
         {
             Money = PlayerPrefs.GetFloat("Money");
@@ -25,6 +27,8 @@ public class MoneyManager : MonoBehaviour {
             PlayerPrefs.SetFloat ("Money", Money);
             PlayerPrefs.SetFloat("MaxMoney", MaxMoney);
         }
+        moneyGauge.UpDateGauge(Money, 1);
+        moneyText.UpDateText((int)Money, 1);
 	}
 	
 	// Update is called once per frame
@@ -37,7 +41,8 @@ public class MoneyManager : MonoBehaviour {
         Money += GetMoney;
         if (Money > MaxMoney) Money = MaxMoney;
         PlayerPrefs.SetFloat("Money", Money);
-        moneyGauge.UpDateGauge(100, 1);
+        moneyGauge.UpDateGauge(Money, 1);
+        moneyText.UpDateText((int)Money, 1);
     }
 
     public void UpGradeMaxMoney()
@@ -45,6 +50,7 @@ public class MoneyManager : MonoBehaviour {
         MaxMoney += 500;
         PlayerPrefs.SetFloat("MaxMoney", MaxMoney);
         moneyGauge.UpDateGauge(MaxMoney, 0);
+        moneyText.UpDateText((int)MaxMoney, 0);
     }
 
     public void BuyMons(float MonsPrice)
