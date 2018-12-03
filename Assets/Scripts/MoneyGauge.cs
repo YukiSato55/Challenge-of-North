@@ -22,6 +22,8 @@ public class MoneyGauge : MonoBehaviour {
         slider.maxValue = PlayerPrefs.GetFloat("MaxMoney");
         slider.value = PlayerPrefs.GetFloat("Money");
         nowmoney = PlayerPrefs.GetFloat("Money");
+        Debug.Log(slider.value);
+
         checkflug = false;
 
     }

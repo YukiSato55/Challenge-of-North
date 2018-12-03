@@ -15,19 +15,9 @@ public class MoneyText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         text = GetComponent<Text>();
-        if (PlayerPrefs.HasKey("Money")) // セーブデータ存在
-        {
-            Money = PlayerPrefs.GetInt("Money");
-            MaxMoney = PlayerPrefs.GetInt("MaxMoney");
-            //PlayerPrefs.SetInt("MaxMoney", MaxMoney);
-        }
-        else         // セーブデータ無
-        {
-            Money = 0;
-            MaxMoney = 1000;
-            PlayerPrefs.SetInt("Money", Money);
-            PlayerPrefs.SetInt("MaxMoney", MaxMoney);
-        }
+        Money = (int)PlayerPrefs.GetFloat("Money");
+        MaxMoney = (int)PlayerPrefs.GetFloat("MaxMoney");
+        
         text.text = "資金：" + Money + "/" + MaxMoney;
     }
 	
@@ -52,7 +42,13 @@ public class MoneyText : MonoBehaviour {
                             if (nowmoney == 0) checkflug = false;
                             break;
                     }
-                text.text = "資金：" + Money + "/" + MaxMoney;
+                    if (Money > MaxMoney)
+                    {
+                        text.text = "資金：" + MaxMoney + "/" + MaxMoney;
+                    } else
+                    {
+                        text.text = "資金：" + Money + "/" + MaxMoney;
+                    }
                 }
                 else
                 {
@@ -64,7 +60,7 @@ public class MoneyText : MonoBehaviour {
         }
     }
 
-    public void UpDateGauge(int money, int Update) // お金ゲージ更新処理
+    public void UpDateText(int money, int Update) // お金ゲージ更新処理
     {                             //０：最大値　１：お金ゲット
         switch (Update)
         {
