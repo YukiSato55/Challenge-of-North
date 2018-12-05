@@ -23,6 +23,7 @@ public class MoneyText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(checkflug);
         switch (phase)
         {
             case PLUS_MONEY:
@@ -32,19 +33,29 @@ public class MoneyText : MonoBehaviour {
                     switch (onePlus)
                     {
                         case 0:
+                            if (nowmoney == 0 || Money >= MaxMoney)
+                            {
+                                checkflug = false;
+                                break;
+                            }
                             Money += 1;
                             nowmoney -= 1;
-                            if (nowmoney == 0) checkflug = false;
+                            
                             break;
                         default:
+                            if (nowmoney == 0 || Money >= MaxMoney)
+                            {
+                                checkflug = false;
+                                break;
+                            }
                             Money += 10;
                             nowmoney -= 10;
-                            if (nowmoney == 0) checkflug = false;
+                            
                             break;
                     }
                     if (Money > MaxMoney)
                     {
-                        text.text = "資金：" + MaxMoney + "/" + MaxMoney;
+                        text.text = "資金：" + Money + "/" + MaxMoney;
                     } else
                     {
                         text.text = "資金：" + Money + "/" + MaxMoney;
