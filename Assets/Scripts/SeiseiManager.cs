@@ -4,14 +4,14 @@ using UnityEngine;
 
 //生成スクリプトUnity
 public class SeiseiManager : MonoBehaviour {
-	
-    private Vector3 SeiseiPos;
-    //private Vector3 pos;
-    private int monsID;
+
+	private Vector3 SeiseiPos;
+	//private Vector3 pos;
+	private int monsID;
 
 	public Canvas canvas;
 	int ID = 99;
-	int id = 99;
+	//int id = 99;
 
 	private GameObject GoMonsterButton;
 	private Vector3 seisePos;
@@ -26,34 +26,34 @@ public class SeiseiManager : MonoBehaviour {
 
 		GoMonsterButton = GameObject.Find ("GoMonsterButton");
 
-		Debug.Log ("tttt " + seisePos);
+		//Debug.Log ("tttt " + seisePos);
 
 
-		Debug.Log("test" + Camera.main.ScreenToWorldPoint(tmp));
+		//Debug.Log("test" + Camera.main.ScreenToWorldPoint(tmp));
 
 		// オブジェクトの座標を取得
 		SeiseiPos = Camera.main.ScreenToWorldPoint(tmp);
 
-		Debug.Log (tmp);
-    }
-	
+		//Debug.Log (tmp);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log ("a:" + a);
-       	Resources.UnloadUnusedAssets();
-		Debug.Log (id);
+		//Resources.UnloadUnusedAssets();
+		//Debug.Log (id);
 		Debug.Log (ID);
 
-    }
+	}
 
-    public void OnClick()
+	public void OnClick()
 	{	
-		
+		Debug.Log ("ID :" + ID);
 		Vector3 seisePos = Camera.main.ScreenToWorldPoint (GoMonsterButton.transform.position);
 		seisePos.z = 0;
 
 		//Debug.Log (posn);
-        GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_" + ID);// +monsID);
+		GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_" + ID);// +monsID);
 
 		//GameObject cloneObject = Instantiate(MonsObject, new Vector3(SeiseiPos.x, SeiseiPos.y, 0), Quaternion.identity);
 		//GameObject cloneObject = Instantiate(MonsObject, seisePos, Quaternion.identity);
@@ -61,7 +61,7 @@ public class SeiseiManager : MonoBehaviour {
 		cloneObject.gameObject.transform.SetParent (canvas.transform, false);
 		cloneObject.transform.position = seisePos;
 		//cloneObject.gameObject.transform.parent = canvas.transform;
-    }
+	}
 
 	//キャラ選択
 	public void Change(int num){
