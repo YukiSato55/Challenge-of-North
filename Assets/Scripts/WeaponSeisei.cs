@@ -23,7 +23,7 @@ public class WeaponSeisei : MonoBehaviour {
         if (this.name.Contains("(Clone)"))
         {
             EAR = thisobj.GetComponent<EnemyAttackRange>();
-            //Debug.Log(EAR);
+            Debug.Log(EAR);
             EnemyPos = EAR.getTargetObj().transform.position;
             
         }
@@ -34,7 +34,7 @@ public class WeaponSeisei : MonoBehaviour {
         if (this.name.Contains("(Clone)"))
         {
             transform.position = Vector3.MoveTowards(transform.position, EnemyPos, speed);
-            //Debug.Log(basePos + "突撃" + EnemyPos);
+            Debug.Log(basePos + "突撃" + EnemyPos);
             if (transform.position == EnemyPos)
             {
                 Destroy(this.gameObject);

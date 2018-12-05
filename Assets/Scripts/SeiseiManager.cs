@@ -11,12 +11,10 @@ public class SeiseiManager : MonoBehaviour {
 
 	public Canvas canvas;
 	int ID = 99;
-	//int id = 99;
+	int id = 99;
 
 	private GameObject GoMonsterButton;
 	private Vector3 seisePos;
-
-	bool F = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,37 +26,29 @@ public class SeiseiManager : MonoBehaviour {
 
 		GoMonsterButton = GameObject.Find ("GoMonsterButton");
 
-		//Debug.Log ("tttt " + seisePos);
+		Debug.Log ("tttt " + seisePos);
 
 
-		//Debug.Log("test" + Camera.main.ScreenToWorldPoint(tmp));
+		Debug.Log("test" + Camera.main.ScreenToWorldPoint(tmp));
 
 		// オブジェクトの座標を取得
 		SeiseiPos = Camera.main.ScreenToWorldPoint(tmp);
 
-		//Debug.Log (tmp);
+		Debug.Log (tmp);
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-		Vector3 pos = this.gameObject.transform.position;
-		if (pos.y > 384 && F == true) {
-			this.gameObject.transform.position = new Vector3 (pos.x, pos.y - 8.0f, pos.z);
-		} else if (pos.y < 1152 && F == false) {
-			this.gameObject.transform.position = new Vector3 (pos.x, pos.y + 8.0f, pos.z);
-		}
-
 		//Debug.Log ("a:" + a);
-       	//Resources.UnloadUnusedAssets();
-		//Debug.Log (id);
+       	Resources.UnloadUnusedAssets();
+		Debug.Log (id);
 		Debug.Log (ID);
 
     }
 
     public void OnClick()
 	{	
-		Debug.Log ("ID :" + ID);
+		
 		Vector3 seisePos = Camera.main.ScreenToWorldPoint (GoMonsterButton.transform.position);
 		seisePos.z = 0;
 
@@ -82,12 +72,5 @@ public class SeiseiManager : MonoBehaviour {
 		Debug.Log (ID + ":" + num);
 		ID = num;
 		Debug.Log (ID + ":" + num);
-	}
-
-	public void Tupon(){
-		if (F != true) {
-			F = true;
-			Debug.Log ("trueが入った");
-		}else if(
 	}
 }

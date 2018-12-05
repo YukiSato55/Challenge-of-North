@@ -28,7 +28,7 @@ public class GaugeValue : MonoBehaviour {
         slider.value = HP;
         for (int i = 0; i < transform.childCount; i++)
         {
-            //Debug.Log(i);
+            Debug.Log(i);
             if (transform.GetChild(i).GetComponent<AlphaColor>() != null)
             {
                 transform.GetChild(i).GetComponent<AlphaColor>().Reset();
