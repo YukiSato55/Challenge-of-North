@@ -49,16 +49,18 @@ public class MoneySeisei : MonoBehaviour {
         moneyManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
         moneyTouch = Tenant.GetComponent<MoneyTouch>();
 
-
         if (NowMoney < Max) //テナントがいっぱいじゃないとき
         {
             TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
+            Debug.Log(timeSpan);
             if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) // 時差 >= RESPAWN_TIME
             {
                 while (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME) && NowMoney < Max)
                 {
+                    Debug.Log("uuum");
                     Form();
                     timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
+                    //Debug.Log(timeSpan);
                     if (NowMoney == Max || timeSpan < TimeSpan.FromSeconds(RESPAWN_TIME)) break;
                 }
             }
@@ -68,10 +70,9 @@ public class MoneySeisei : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log(NowMoney);
+        Debug.Log(gameObject.name + ":" + NowMoney);
 
         TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
-            //Debug.Log(timeSpan);
         if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) // 時差 >= RESPAWN_TIME
         {
             LastTime = DateTime.UtcNow;
@@ -80,7 +81,6 @@ public class MoneySeisei : MonoBehaviour {
                 {
                 Form();
                 timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
-                //Debug.Log(Tenant + ":" + timeSpan + " >= " + TimeSpan.FromSeconds(RESPAWN_TIME));
             }
           
         }
@@ -89,19 +89,18 @@ public class MoneySeisei : MonoBehaviour {
 
     void Form()
     {
+        //Debug.Log("増えたで" + NowMoney + " + " + FormMoney);
         NowMoney += FormMoney;
         if (NowMoney > Max) NowMoney = Max;
-        Debug.Log("生成");
-
         moneyTouch.UpdateDisplay(NowMoney, Max);
-        //PlayerPrefs.SetFloat(SaveName, NowMoney);
+        PlayerPrefs.SetFloat(SaveName, NowMoney);
     }
 
     public void GetMoney()
     {
         moneyManager.TouchGetMoney(NowMoney);
         NowMoney = 0;
-        moneyTouch.UpdateDisplay(NowMoney, Max);
-        //PlayerPrefs.SetFloat(SaveName, NowMoney);
+        moneyTouch.Touch();
+        PlayerPrefs.SetFloat(SaveName, NowMoney);
     }
 }

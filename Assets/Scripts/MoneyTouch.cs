@@ -11,8 +11,9 @@ public class MoneyTouch : MonoBehaviour {
     private Image image;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         image = GetComponent<Image>();
+        Debug.Log(image);
 	}
 	
 	// Update is called once per frame
@@ -30,7 +31,7 @@ public class MoneyTouch : MonoBehaviour {
             image.color = new Color(1, 1, 1, 1);
 
         }
-        else if(Nowmoney != 0)
+        else if(Nowmoney >= 0)
         {
             oku.SetActive(false);
             man.SetActive(true);
@@ -43,5 +44,11 @@ public class MoneyTouch : MonoBehaviour {
             man.SetActive(false);
             image.color = new Color(1, 1, 1, 0);
         }
+    }
+    public void Touch()
+    {
+        oku.SetActive(false);
+        man.SetActive(false);
+        image.color = new Color(1, 1, 1, 0);
     }
 }

@@ -24,7 +24,7 @@ public class MoneyManager : MonoBehaviour {
         {
             Money = 0;
             MaxMoney = 1000;
-            PlayerPrefs.SetFloat ("Money", Money);
+            //PlayerPrefs.SetFloat ("Money", Money);
             PlayerPrefs.SetFloat("MaxMoney", MaxMoney);
         }
         moneyGauge.UpDateGauge(Money, 1);
@@ -38,11 +38,14 @@ public class MoneyManager : MonoBehaviour {
 
     public void TouchGetMoney(float GetMoney)
     {
+        Debug.Log("今" + Money);
+        Debug.Log("増" + GetMoney);
         Money += GetMoney;
+        Debug.Log("結果" + Money);
         if (Money > MaxMoney) Money = MaxMoney;
-        PlayerPrefs.SetFloat("Money", Money);
-        moneyGauge.UpDateGauge(Money, 1);
-        moneyText.UpDateText((int)Money, 1);
+        //PlayerPrefs.SetFloat("Money", Money);
+        moneyGauge.UpDateGauge(GetMoney, 1);
+        moneyText.UpDateText((int)GetMoney, 1);
     }
 
     public void UpGradeMaxMoney()

@@ -17,6 +17,7 @@ public class SEManager : MonoBehaviour {
 
     public void OnClick()
     {
+        Debug.Log("音なるで");
         GetSE.PlayOneShot(GetSE.clip);
     }
 }
