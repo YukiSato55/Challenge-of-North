@@ -19,7 +19,6 @@ public class MoneySeisei : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         //最終起動時間取得
         if (PlayerPrefs.HasKey("LastTime"))
         {
@@ -68,7 +67,7 @@ public class MoneySeisei : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log(NowMoney);
+        Debug.Log(NowMoney);
 
         TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
             //Debug.Log(timeSpan);
@@ -80,7 +79,7 @@ public class MoneySeisei : MonoBehaviour {
                 {
                 Form();
                 timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
-                //Debug.Log(Tenant + ":" + timeSpan + " >= " + TimeSpan.FromSeconds(RESPAWN_TIME));
+                Debug.Log(Tenant + ":" + timeSpan + " >= " + TimeSpan.FromSeconds(RESPAWN_TIME));
             }
           
         }
