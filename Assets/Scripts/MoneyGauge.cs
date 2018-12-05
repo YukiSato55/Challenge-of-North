@@ -20,7 +20,7 @@ public class MoneyGauge : MonoBehaviour {
         slider = GetComponent<Slider>();
         phase = STAY;
         slider.maxValue = PlayerPrefs.GetFloat("MaxMoney");
-        slider.value = PlayerPrefs.GetFloat("Money");
+        //slider.value = PlayerPrefs.GetFloat("Money");
         nowmoney = PlayerPrefs.GetFloat("Money");
         Debug.Log(slider.value);
 
@@ -39,13 +39,12 @@ public class MoneyGauge : MonoBehaviour {
                         case 0:
                             slider.value += 1f;
                             nowmoney -= 1f;
-                            if (nowmoney == 0) checkflug = false;
+                            if (nowmoney <= 0) checkflug = false;
                             break;
                         default:
-                            Debug.Log(slider.value);
                             slider.value += 10f;
                             nowmoney -= 10f;
-                            if (nowmoney == 0) checkflug = false;
+                            if (nowmoney <= 0) checkflug = false;
                             break;
                     }
                 } else

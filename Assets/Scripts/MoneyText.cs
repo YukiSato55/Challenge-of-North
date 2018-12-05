@@ -17,7 +17,7 @@ public class MoneyText : MonoBehaviour {
         text = GetComponent<Text>();
         Money = (int)PlayerPrefs.GetFloat("Money");
         MaxMoney = (int)PlayerPrefs.GetFloat("MaxMoney");
-        
+        Debug.Log(Money);
         text.text = "資金：" + Money + "/" + MaxMoney;
     }
 	
@@ -35,6 +35,7 @@ public class MoneyText : MonoBehaviour {
                         case 0:
                             if (nowmoney == 0 || Money >= MaxMoney)
                             {
+                                Money = MaxMoney;
                                 checkflug = false;
                                 break;
                             }
@@ -45,6 +46,7 @@ public class MoneyText : MonoBehaviour {
                         default:
                             if (nowmoney == 0 || Money >= MaxMoney)
                             {
+                                Money = MaxMoney;
                                 checkflug = false;
                                 break;
                             }
@@ -53,13 +55,7 @@ public class MoneyText : MonoBehaviour {
                             
                             break;
                     }
-                    if (Money > MaxMoney)
-                    {
-                        text.text = "資金：" + Money + "/" + MaxMoney;
-                    } else
-                    {
-                        text.text = "資金：" + Money + "/" + MaxMoney;
-                    }
+                    text.text = "資金：" + Money + "/" + MaxMoney;
                 }
                 else
                 {
@@ -75,11 +71,11 @@ public class MoneyText : MonoBehaviour {
     {                             //０：最大値　１：お金ゲット
         switch (Update)
         {
-            case 0:
+            case 0: // 最大値アップ
                 MaxMoney = money;
                 break;
 
-            case 1:
+            case 1: // お金回収
                 nowmoney = money;
                 phase = PLUS_MONEY;
                 checkflug = true;
