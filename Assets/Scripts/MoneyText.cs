@@ -17,13 +17,14 @@ public class MoneyText : MonoBehaviour {
         text = GetComponent<Text>();
         Money = (int)PlayerPrefs.GetFloat("Money");
         MaxMoney = (int)PlayerPrefs.GetFloat("MaxMoney");
-        Debug.Log(Money);
+        Debug.Log("text" + Money);
         text.text = "資金：" + Money + "/" + MaxMoney;
+        phase = STAY;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(checkflug);
+        Debug.Log(nowmoney);
         switch (phase)
         {
             case PLUS_MONEY:
@@ -33,7 +34,7 @@ public class MoneyText : MonoBehaviour {
                     switch (onePlus)
                     {
                         case 0:
-                            if (nowmoney == 0 || Money >= MaxMoney)
+                            if (Money >= MaxMoney)
                             {
                                 Money = MaxMoney;
                                 checkflug = false;
@@ -41,10 +42,14 @@ public class MoneyText : MonoBehaviour {
                             }
                             Money += 1;
                             nowmoney -= 1;
-                            
+                            if (nowmoney <= 0)
+                            {
+                                checkflug = false;
+                                break;
+                            }
                             break;
                         default:
-                            if (nowmoney == 0 || Money >= MaxMoney)
+                            if (Money >= MaxMoney)
                             {
                                 Money = MaxMoney;
                                 checkflug = false;
@@ -52,9 +57,15 @@ public class MoneyText : MonoBehaviour {
                             }
                             Money += 10;
                             nowmoney -= 10;
+                            if(nowmoney <= 0)
+                            {
+                                checkflug = false;
+                                break;
+                            }
                             
                             break;
                     }
+                    Debug.Log("text" + Money);
                     text.text = "資金：" + Money + "/" + MaxMoney;
                 }
                 else

@@ -70,7 +70,7 @@ public class MoneySeisei : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(gameObject.name + ":" + NowMoney);
+       // Debug.Log(gameObject.name + ":" + NowMoney);
 
         TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
         if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) // 時差 >= RESPAWN_TIME
