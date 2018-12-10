@@ -16,4 +16,9 @@ public class UpGradePanel : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnClick(int ID)
+    {
+
+    }
 }
