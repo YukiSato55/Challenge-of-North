@@ -960,6 +960,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114546159947788426, guid: 6de36ce18727cb94aa2d6f222d585958,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u63A2\u691C"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de36ce18727cb94aa2d6f222d585958, type: 2}
   m_IsPrefabAsset: 0
@@ -1243,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7921569, g: 0.62352943, b: 0.20392157, a: 1}
+  m_Color: {r: 0.6698113, g: 0.5330476, b: 0.19272871, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3420,14 +3425,14 @@ RectTransform:
   m_GameObject: {fileID: 2011341462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 2017884200}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: 417.63}
+  m_AnchoredPosition: {x: 24, y: 417.63}
   m_SizeDelta: {x: 360, y: 455.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011341464
@@ -3443,7 +3448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_color1: {r: 1, g: 1, b: 1, a: 1}
-  m_color2: {r: 0.2688679, g: 0.52245003, b: 1, a: 1}
+  m_color2: {r: 1, g: 1, b: 1, a: 1}
   m_angle: 0
   m_ignoreRatio: 1
 --- !u!114 &2011341465
@@ -3459,14 +3464,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20392156, g: 0.65940094, b: 0.7921569, a: 1}
+  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1f3a0762ede087b4f9b330db8cd161de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
