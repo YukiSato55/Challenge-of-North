@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterMove : MonoBehaviour {
     private int MonsID;
     private int MoveDirection = 0; // 動く方向 0：正面、1：右、2：左、3：後退
+    private float MonsATK;
 	private Animator animator;
     
     // ID順　0から17
@@ -12,7 +13,8 @@ public class MonsterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        MonsID = this.GetComponent<MonsterIDManager>().MonsterID;
+        MonsID = GetComponent<MonsterIDManager>().MonsterID;
+        MonsATK = GetComponent<MonsterStatus>().MonsATK;
 		animator = GetComponent<Animator>();
 	}
 	
@@ -43,6 +45,8 @@ public class MonsterMove : MonoBehaviour {
 
 			//デストローイ
             case 4:
+                GoalHPManager Goal = GameObject.Find("GoalHP").GetComponent<GoalHPManager>();
+                Goal.DamageCalculation(MonsATK);
                 Destroy(this.gameObject);
                 break;
         }

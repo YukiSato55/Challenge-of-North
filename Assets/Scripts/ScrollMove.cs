@@ -18,10 +18,10 @@ public class ScrollMove : MonoBehaviour {
 		//Debug.Log (pos.y);
 		if (pos.y < 100 && F == true) {
 			this.gameObject.transform.position = new Vector3 (pos.x, pos.y + 8.0f, pos.z);
-			Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaa");
+			//Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaa");
 		} else if (pos.y > -100 && F == false) {
 			this.gameObject.transform.position = new Vector3 (pos.x, pos.y - 8.0f, pos.z);
-			Debug.Log ("bbbbbbbbbbbbbbbbbbbbbbbbb");
+			//Debug.Log ("bbbbbbbbbbbbbbbbbbbbbbbbb");
 		}
 	}
 
