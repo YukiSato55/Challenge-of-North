@@ -67,10 +67,8 @@ public class SeiseiManager : MonoBehaviour {
 	public void Change(int num){
 		//a++;
 		//Debug.Log ("a " + a);
-		//Debug.Log (id);
-		//Debug.Log (id);
-		Debug.Log (ID + ":" + num);
+		//Debug.Log (ID + ":" + num);
 		ID = num;
-		Debug.Log (ID + ":" + num);
+		//Debug.Log (ID + ":" + num);
 	}
 }

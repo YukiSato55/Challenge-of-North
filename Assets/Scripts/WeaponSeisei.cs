@@ -42,12 +42,15 @@ public class WeaponSeisei : MonoBehaviour {
         }
     }
     
-
-    public void Shot(GameObject Pos)
+    /// <summary>
+    /// 防衛設備から武器を出す処理
+    /// </summary>
+    /// <param name="Pos">モンスターの現在地</param>
+    public void Shot(GameObject MonsPos)
     {
         if(!this.name.Contains("(Clone)"))
         {
-            Vector3 diff = (Pos.gameObject.transform.position - this.transform.position);
+            Vector3 diff = (MonsPos.gameObject.transform.position - this.transform.position);
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);
             Instantiate(this, new Vector3(basePos.x, basePos.y, basePos.z), transform.rotation);
 
