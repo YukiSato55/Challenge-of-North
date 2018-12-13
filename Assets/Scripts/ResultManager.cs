@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class ResultManager : MonoBehaviour {
     GameObject Result;
-    int DeathCount;
+    [SerializeField]
+    private ResultStar resultStar;
+    [SerializeField]
+    private ResultText resultText;
+
+    int DeathCount, EnemyBreakCount, EnemyCount;
+    private GameObject[] Enemy;
 
 	// Use this for initialization
 	void Awake () {
@@ -13,6 +19,8 @@ public class ResultManager : MonoBehaviour {
         Result.SetActive(false);
         // 保持しているモンスター数の取得
         DeathCount = 0;
+        EnemyBreakCount = 0;
+        Enemy = GameObject.FindGameObjectsWithTag("Enemy");
 	}
 	
 	// Update is called once per frame
@@ -33,5 +41,7 @@ public class ResultManager : MonoBehaviour {
     public void MainBreak()
     {
         Result.SetActive(true);
+        resultText.Clear();
+        resultStar.CheckStar(EnemyBreakCount);
     }
 }

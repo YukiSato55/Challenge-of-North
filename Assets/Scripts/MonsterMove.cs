@@ -51,7 +51,7 @@ public class MonsterMove : MonoBehaviour {
             case 4:
                 GoalHPManager Goal = GameObject.Find("GoalHP").GetComponent<GoalHPManager>();
                 Goal.DamageCalculation(MonsATK);
-                resultManager.Death();
+                resultManager.Death(); // 敵基地HP減算
                 Destroy(this.gameObject);
                 break;
         }
