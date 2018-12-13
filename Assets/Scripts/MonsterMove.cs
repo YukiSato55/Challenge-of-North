@@ -7,7 +7,9 @@ public class MonsterMove : MonoBehaviour {
     private int MoveDirection = 0; // 動く方向 0：正面、1：右、2：左、3：後退
     private float MonsATK;
 	private Animator animator;
-    
+
+    private ResultManager resultManager;
+
     // ID順　0から17
     private float[] MonsterMoveSpeed = {0.01f, 0.02f, 0.05f,0.02f,0.02f,0.015f,0.02f,0.025f,0.025f,0.015f,0.02f,0.01f,0.01f,0.02f,0.025f,0.015f,0.02f,0.03f};   
 
@@ -16,7 +18,9 @@ public class MonsterMove : MonoBehaviour {
         MonsID = GetComponent<MonsterIDManager>().MonsterID;
         MonsATK = GetComponent<MonsterStatus>().MonsATK;
 		animator = GetComponent<Animator>();
-	}
+
+        resultManager = GameObject.Find("ResultManager").GetComponent<ResultManager>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -47,6 +51,7 @@ public class MonsterMove : MonoBehaviour {
             case 4:
                 GoalHPManager Goal = GameObject.Find("GoalHP").GetComponent<GoalHPManager>();
                 Goal.DamageCalculation(MonsATK);
+                resultManager.Death();
                 Destroy(this.gameObject);
                 break;
         }

@@ -11,9 +11,10 @@ public class MonsterStatus : MonoBehaviour {
     [SerializeField]
     private GameObject Database;
     private GaugeValue gaugeValue;
+    private ResultManager resultManager;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		renderer = GetComponent<Renderer>();
 		//GameClearText.SetActive(false);
 	}
@@ -33,13 +34,15 @@ public class MonsterStatus : MonoBehaviour {
         gaugeValue = this.GetComponentInChildren<GaugeValue>();
         MonsHP = Database.GetComponent<StatusDataBase>().MonsDataHP[MonsID, Rank]; // IDとRankで取得する値を決める
         MonsATK = Database.GetComponent<StatusDataBase>().MonsDataATK[MonsID, Rank];
-        //Debug.Log("HP:" + MonsHP + "ATK:" + MonsATK);
+        resultManager = GameObject.Find("ResultManager").GetComponent<ResultManager>();
+        Debug.Log("syutoku:" + resultManager);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if(MonsHP <= 0)
         {
+            resultManager.Death();
             Destroy(this.gameObject);
         }
 	}
