@@ -9,8 +9,6 @@ public class GoalHPManager : MonoBehaviour {
     private Slider slider;
     private bool clearflug = false;
     private ResultManager resultManager;
-    [SerializeField]
-    private ResultText resultText;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +32,6 @@ public class GoalHPManager : MonoBehaviour {
             if (clearflug == false)
             {
                 resultManager.MainBreak();
-                resultText.Clear();
                 clearflug = true;
             }
         }
