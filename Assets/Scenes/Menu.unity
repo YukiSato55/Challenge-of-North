@@ -628,12 +628,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 360, y: 640}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1498,14 +1498,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4309608239933500, guid: 6de36ce18727cb94aa2d6f222d585958, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de36ce18727cb94aa2d6f222d585958, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &1692621142 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4309608239933500, guid: 6de36ce18727cb94aa2d6f222d585958,
+--- !u!224 &1692621142 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224750521653415798, guid: 6de36ce18727cb94aa2d6f222d585958,
     type: 2}
   m_PrefabInternal: {fileID: 1692621141}
 --- !u!1 &1959582602
