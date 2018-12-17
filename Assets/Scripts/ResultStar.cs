@@ -23,5 +23,6 @@ public class ResultStar : MonoBehaviour {
     public void CheckStar(int EnemyBreakCount)
     {
         main.sprite = trueStar;
+        //if()
     }
 }
