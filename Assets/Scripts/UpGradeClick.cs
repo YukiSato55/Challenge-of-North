@@ -16,6 +16,4 @@ public class UpGradeClick : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public void 
 }
