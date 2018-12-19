@@ -17,5 +17,5 @@ public class UpGradeClick : MonoBehaviour {
 		
 	}
 
-    public void 
+    //public void 
 }
