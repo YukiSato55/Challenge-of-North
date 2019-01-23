@@ -23,7 +23,7 @@ public class MoneyManager : MonoBehaviour {
         } else         // セーブデータ無
         {
             Money = 0;
-            MaxMoney = 1000;
+            MaxMoney = 5000;
             //PlayerPrefs.SetFloat ("Money", Money);
             PlayerPrefs.SetFloat("MaxMoney", MaxMoney);
         }
