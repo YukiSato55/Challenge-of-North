@@ -32,8 +32,7 @@ public class GoalHPManager : MonoBehaviour {
     {
         slider.value -= MonsATK;
         BreakPoint = (slider.value / slider.maxValue) * 100;
-        BreakPoint = 100
-            - BreakPoint;
+        BreakPoint = 100 - BreakPoint;
         if (slider.value <= 0)
         {
             slider.value = 0;

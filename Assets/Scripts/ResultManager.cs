@@ -36,7 +36,7 @@ public class ResultManager : MonoBehaviour {
     public void Death()
     {
         DeathCount++;
-        Debug.Log("Death" + DeathCount);
+        //Debug.Log("Death" + DeathCount);
 
 
         /*if(DeathCount == 10) // 保持しているモンスター数と死んだモンスター数が一致した場合
