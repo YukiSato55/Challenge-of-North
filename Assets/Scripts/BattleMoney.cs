@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BattleMoney : MonoBehaviour {
     private Text MoneyText;
-    private float nowMoney;
+    private float nowMoney, textmoney;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +17,21 @@ public class BattleMoney : MonoBehaviour {
         {
             nowMoney = 0;
         }
-        MoneyText.text = "所持金:￥" + nowMoney;
+        textmoney = nowMoney;
+         MoneyText.text = "所持金:￥" + textmoney;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(nowMoney != textmoney)
+        {
+            textmoney--;
+            MoneyText.text = "所持金:￥" + textmoney;
+        }
 	}
+
+    public void BuyMons(float cost)
+    {
+        nowMoney -= cost;
+    }
 }
