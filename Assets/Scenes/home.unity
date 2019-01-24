@@ -1939,7 +1939,7 @@ Prefab:
     - target: {fileID: 224545705923698986, guid: 6de36ce18727cb94aa2d6f222d585958,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de36ce18727cb94aa2d6f222d585958, type: 2}
@@ -2196,7 +2196,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8CC7\u91D1\uFF1A500/1000"
+  m_Text: "\u8CC7\u91D1\uFF1A500/5000"
 --- !u!222 &919976637
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2448,6 +2448,46 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1260157240}
   m_CullTransparentMesh: 0
+--- !u!1 &1312991447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312991448}
+  - component: {fileID: 1312991449}
+  m_Layer: 0
+  m_Name: Ad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1312991448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1312991447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 260.85614, y: 328.83966, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1312991449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1312991447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592ef8b453151624289b5d5c57534c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328520654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,7 +2769,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1000
+  m_MaxValue: 5000
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
