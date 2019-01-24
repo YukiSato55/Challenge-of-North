@@ -6,11 +6,14 @@ public class MonsterStatus : MonoBehaviour {
 	private Renderer renderer;
     private int MonsID, Rank;
 
+    //旧式:GaugeValue
+    //最新:Gauge2Value
+
     public float MonsHP, MonsATK;
 
     [SerializeField]
     private GameObject Database;
-    private GaugeValue gaugeValue;
+    private Gauge2Value gaugeValue;
     private ResultManager resultManager;
 
     // Use this for initialization
@@ -31,7 +34,7 @@ public class MonsterStatus : MonoBehaviour {
             PlayerPrefs.SetInt("MonsRank_" + MonsID, Rank);
         }
 
-        gaugeValue = this.GetComponentInChildren<GaugeValue>();
+        gaugeValue = this.GetComponentInChildren<Gauge2Value>();
         MonsHP = Database.GetComponent<StatusDataBase>().MonsDataHP[MonsID, Rank]; // IDとRankで取得する値を決める
         MonsATK = Database.GetComponent<StatusDataBase>().MonsDataATK[MonsID, Rank];
         resultManager = GameObject.Find("ResultManager").GetComponent<ResultManager>();

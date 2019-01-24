@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ResultManager : MonoBehaviour {
-    GameObject Result;
+    [SerializeField]
+    private GameObject Result;
     [SerializeField]
     private ResultStar resultStar;
     [SerializeField]
@@ -15,13 +16,17 @@ public class ResultManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        Result = GameObject.Find("Result");
         Result.SetActive(false);
         // 保持しているモンスター数の取得
         DeathCount = 0;
         EnemyBreakCount = 0;
         Enemy = GameObject.FindGameObjectsWithTag("Enemy");
 	}
+
+    void Start ()
+    {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,10 +37,12 @@ public class ResultManager : MonoBehaviour {
     {
         DeathCount++;
         Debug.Log("Death" + DeathCount);
-        if(DeathCount == 10) // 保持しているモンスター数と死んだモンスター数が一致した場合
+
+
+        /*if(DeathCount == 10) // 保持しているモンスター数と死んだモンスター数が一致した場合
         {
             Result.SetActive(true);
-        }
+        }*/
     }
 
     public void MainBreak()
