@@ -8,7 +8,7 @@ public class BreakPercent : MonoBehaviour {
     private Text text;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         text = GetComponent<Text>();
         breakpoint = 0;
         text.text = ""+breakpoint;
@@ -22,6 +22,7 @@ public class BreakPercent : MonoBehaviour {
     public void CheckPoint(float Percent)
     {
         breakpoint = (int)Percent;
+        Debug.Log(breakpoint);
         text.text = "" + breakpoint;
     }
 }

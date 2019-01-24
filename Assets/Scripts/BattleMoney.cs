@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class BattleMoney : MonoBehaviour {
     private Text MoneyText;
     private float nowMoney, textmoney;
+    private StatusDataBase statusData;
+    private SUMBuyMoney SUM;
 
 	// Use this for initialization
 	void Start () {
+        statusData = GameObject.Find("MonsStatusDatabase").GetComponent<StatusDataBase>();
+        SUM = GameObject.Find("SUMBuyMoney").GetComponent<SUMBuyMoney>();
         MoneyText = GetComponent<Text>();
 		if(PlayerPrefs.HasKey("Money"))
         {
@@ -30,8 +34,31 @@ public class BattleMoney : MonoBehaviour {
         }
 	}
 
-    public void BuyMons(float cost)
+    public bool BuyMons(int monsID, bool Check)
     {
-        nowMoney -= cost;
+        int Rank;
+        float cost;
+        if (PlayerPrefs.HasKey("MonsRank_" + monsID))
+        {
+            Rank = PlayerPrefs.GetInt("MonsRank_" + monsID);
+        } else
+        {
+            Rank = 0;
+            PlayerPrefs.SetInt("MonsRank_" + monsID, Rank);
+        }
+        cost = statusData.MonsDataMani[monsID, Rank];
+
+        if ((nowMoney - cost) >= 0)
+        {
+            nowMoney -= cost;
+            PlayerPrefs.SetFloat("Money", nowMoney);
+            SUM.SUMMoney(cost);
+            Check = true;
+        } else
+        {
+            Debug.Log("買えへん");
+            Check = false;
+        }
+        return Check;
     }
 }

@@ -31,7 +31,7 @@ public class WeaponSeisei : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (this.name.Contains("(Clone)"))
+        if (name.Contains("(Clone)"))
         {
             transform.position = Vector3.MoveTowards(transform.position, EnemyPos, speed);
             //Debug.Log(basePos + "突撃" + EnemyPos);
@@ -48,7 +48,7 @@ public class WeaponSeisei : MonoBehaviour {
     /// <param name="Pos">モンスターの現在地</param>
     public void Shot(GameObject MonsPos)
     {
-        if(!this.name.Contains("(Clone)"))
+        if(this.name.Contains("(Clone)"))
         {
             Vector3 diff = (MonsPos.gameObject.transform.position - this.transform.position);
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);

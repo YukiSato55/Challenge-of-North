@@ -13,6 +13,7 @@ public class MonsterStatus : MonoBehaviour {
 
     [SerializeField]
     private GameObject Database;
+    private StatusDataBase Data;
     private Gauge2Value gaugeValue;
     private ResultManager resultManager;
 
@@ -24,21 +25,18 @@ public class MonsterStatus : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () { // AwakeじゃないとsliderのStartに反映されない
-        MonsID = this.GetComponent<MonsterIDManager>().MonsterID; // ID読み取り
-        if (PlayerPrefs.HasKey("MonsRank_" + MonsID) == true) // データがあれば
+        Data = GameObject.Find("MonsStatusDatabase").GetComponent<StatusDataBase>();
+        MonsID = GetComponent<MonsterIDManager>().MonsterID; // ID読み取り
+        if (PlayerPrefs.HasKey("MonsRank_" + MonsID))
         {
-            Rank = PlayerPrefs.GetInt("MonsRank_" + MonsID); // 読み込み
+            Rank = PlayerPrefs.GetInt("MonsRank_" + MonsID);
         } else
         {
-            Rank = 0;                                   // 無い場合は0で始めから
+            Rank = 0;
             PlayerPrefs.SetInt("MonsRank_" + MonsID, Rank);
         }
-
-        gaugeValue = this.GetComponentInChildren<Gauge2Value>();
-        MonsHP = Database.GetComponent<StatusDataBase>().MonsDataHP[MonsID, Rank]; // IDとRankで取得する値を決める
-        MonsATK = Database.GetComponent<StatusDataBase>().MonsDataATK[MonsID, Rank];
-        resultManager = GameObject.Find("ResultManager").GetComponent<ResultManager>();
-        Debug.Log("syutoku:" + resultManager);
+        MonsHP = Data.MonsDataHP[MonsID, Rank];
+        MonsATK = Data.MonsDataATK[MonsID, Rank];
     }
 	
 	// Update is called once per frame
@@ -56,6 +54,15 @@ public class MonsterStatus : MonoBehaviour {
 		//ダメージを受けたら点滅
 		StartCoroutine ("Damage");
         gaugeValue.GaugeDamage();
+    }
+
+    public void DecisionStatus()
+    {
+        Rank = GetComponent<MonsterIDManager>().MonsterRank; // Rank読み取り
+        gaugeValue = this.GetComponentInChildren<Gauge2Value>();
+        MonsHP = Database.GetComponent<StatusDataBase>().MonsDataHP[MonsID, Rank]; // IDとRankで取得する値を決める
+        MonsATK = Database.GetComponent<StatusDataBase>().MonsDataATK[MonsID, Rank];
+        resultManager = GameObject.Find("ResultManager").GetComponent<ResultManager>();
     }
 
 	//点滅の処理
