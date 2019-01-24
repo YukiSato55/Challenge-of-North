@@ -5,12 +5,16 @@ using GoogleMobileAds.Api;
 
 public class GoogleAds : MonoBehaviour {
 
+	private BannerView bannerView;
+
 	// Use this for initialization
 	void Start () {
+
+
 		// アプリID
 		string appId = "ca-app-pub-3940256099942544~3347511713";
 
-		// Initialize the Google Mobile Ads SDK.
+		// Google Mobile Ads SDKを初期化します。
 		MobileAds.Initialize(appId);
 
 		RequestBanner();
@@ -21,13 +25,13 @@ public class GoogleAds : MonoBehaviour {
 		// 広告ユニットID これはテスト用
 		string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 
-		// Create a 320x50 banner at the top of the screen.
-		BannerView bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+		// 画面下部に320 x 50のバナーを作成します。
+		bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
 
-		// Create an empty ad request.
+		// 空の広告リクエストを作成します。
 		AdRequest request = new AdRequest.Builder().Build();
 
-		// Load the banner with the request.
+		// リクエストとともにバナーをロードします。
 		bannerView.LoadAd(request);
 
 	}
