@@ -48,8 +48,9 @@ public class WeaponSeisei : MonoBehaviour {
     /// <param name="Pos">モンスターの現在地</param>
     public void Shot(GameObject MonsPos)
     {
-        if(this.name.Contains("(Clone)"))
+        if(!this.name.Contains("(Clone)"))
         {
+            Debug.Log(MonsPos);
             Vector3 diff = (MonsPos.gameObject.transform.position - this.transform.position);
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);
             Instantiate(this, new Vector3(basePos.x, basePos.y, basePos.z), transform.rotation);

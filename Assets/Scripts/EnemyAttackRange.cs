@@ -61,8 +61,11 @@ public class EnemyAttackRange : MonoBehaviour
 
         if(ATKchargeTime <= 0 && nearDis <= range)
         {
-            weaponSeisei.Shot(targetObj);
-            ATKchargeTime = ATKTime;
+            if (targetObj)
+            {
+                weaponSeisei.Shot(targetObj);
+                ATKchargeTime = ATKTime;
+            }
         }
 
         //対象の位置の方向を向く
