@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SUMBuyMoney : MonoBehaviour {
-    private float SUM;
+    public float SUM;
 
 	// Use this for initialization
 	void Start () {
