@@ -10,6 +10,8 @@ public class ResultManager : MonoBehaviour {
     private ResultStar resultStar;
     [SerializeField]
     private ResultText resultText;
+    [SerializeField]
+    private float NorumaCost;
 
     int DeathCount, EnemyBreakCount, EnemyCount;
     private GameObject[] Enemy;
@@ -48,7 +50,7 @@ public class ResultManager : MonoBehaviour {
     public void MainBreak()
     {
         Result.SetActive(true);
-        resultText.Clear();
-        resultStar.CheckStar(EnemyBreakCount);
+        resultStar.CheckStar(EnemyBreakCount, NorumaCost);
+        resultText.Clear(NorumaCost);
     }
 }

@@ -20,9 +20,14 @@ public class ResultStar : MonoBehaviour {
 		
 	}
 
-    public void CheckStar(int EnemyBreakCount)
+    public void CheckStar(int EnemyBreakCount, float NorumaCost)
     {
         main.sprite = trueStar;
-        //if()
+        //if(人の破壊率　>= 100) {}
+        sub100.sprite = trueStar;
+        if(NorumaCost >= GameObject.Find("SUMBuyMoney").GetComponent<SUMBuyMoney>().SUM)
+        {
+            subCost.sprite = trueStar;
+        }
     }
 }
