@@ -13,7 +13,7 @@ public class MoneyTouch : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         image = GetComponent<Image>();
-        Debug.Log(image);
+        //Debug.Log(image);
 	}
 	
 	// Update is called once per frame

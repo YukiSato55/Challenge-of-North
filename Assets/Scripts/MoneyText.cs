@@ -17,14 +17,12 @@ public class MoneyText : MonoBehaviour {
         text = GetComponent<Text>();
         Money = (int)PlayerPrefs.GetFloat("Money");
         MaxMoney = (int)PlayerPrefs.GetFloat("MaxMoney");
-        Debug.Log("text" + Money);
         text.text = "資金：" + Money + "/" + MaxMoney;
         phase = STAY;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(nowmoney);
         switch (phase)
         {
             case PLUS_MONEY:
