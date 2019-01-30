@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ConfiguManager : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject Pane;
+	[SerializeField]
+	private GameObject Pane2;
 	[SerializeField]
 	private Text targetText;
 
@@ -21,7 +24,7 @@ public class ConfiguManager : MonoBehaviour {
 	}
 
 	public void Select(int Pnum){
-		Debug.Log (Pnum + "を取得。");
+		//Debug.Log (Pnum + "を取得。");
 		Pane.SetActive (true);
 		switch (Pnum) {
 		case 0:
@@ -31,15 +34,19 @@ public class ConfiguManager : MonoBehaviour {
 			targetText.text = "コンフィグ";
 			break;
 		case 2:
-			targetText.text = "その他";
-			break;
-		case 3:
 			targetText.text = "クレジット";
 			break;
 		}
 	}
 
-	public void SeleBack(){
-		Pane.SetActive (false);
+	public void SeleBack(int Bnum){
+		switch (Bnum) {
+		case 0:
+			Pane.SetActive (false);
+			break;
+		case 1:
+			Pane2.SetActive (false);
+			break;
+		}
 	}
 }
