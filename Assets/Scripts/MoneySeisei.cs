@@ -11,8 +11,8 @@ public class MoneySeisei : MonoBehaviour {
     [SerializeField]
     private GameObject Tenant;
     private float NowMoney = 0;
-    private const int ACTIVERESPAWN_TIME = 5;
-    private const int UNDERRESPAWN_TIME = 30;
+    private const int ACTIVERESPAWN_TIME = 3;
+    private const int UNDERRESPAWN_TIME = 15;
     private MoneyManager moneyManager;
     private MoneyTouch moneyTouch;
     private DateTime LastTime;
@@ -53,16 +53,16 @@ public class MoneySeisei : MonoBehaviour {
         if (NowMoney < Max) //テナントがいっぱいじゃないとき
         {
             TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
-            Debug.Log(timeSpan);
-            if (timeSpan >= TimeSpan.FromSeconds(ACTIVERESPAWN_TIME)) // 時差 >= ACTIVERESPAWN_TIME
+            Debug.Log(timeSpan);                // オフラインから集計
+            if (timeSpan >= TimeSpan.FromSeconds(UNDERRESPAWN_TIME)) // 時差 >= ACTIVERESPAWN_TIME
             {
-                while (timeSpan >= TimeSpan.FromSeconds(ACTIVERESPAWN_TIME) && NowMoney < Max)
+                while (timeSpan >= TimeSpan.FromSeconds(UNDERRESPAWN_TIME) && NowMoney < Max)
                 {
                     Debug.Log("uuum");
                     Form();
-                    timeSpan -= TimeSpan.FromSeconds(ACTIVERESPAWN_TIME);
+                    timeSpan -= TimeSpan.FromSeconds(UNDERRESPAWN_TIME);
                     //Debug.Log(timeSpan);
-                    if (NowMoney == Max || timeSpan < TimeSpan.FromSeconds(ACTIVERESPAWN_TIME)) break;
+                    if (NowMoney == Max || timeSpan < TimeSpan.FromSeconds(UNDERRESPAWN_TIME)) break;
                 }
             }
         }
@@ -104,5 +104,14 @@ public class MoneySeisei : MonoBehaviour {
         NowMoney = 0;
         moneyTouch.Touch();
         PlayerPrefs.SetFloat(SaveName, NowMoney);
+    }
+
+    public void JihankiTouchGet()
+    {
+        float Money = Mathf.Round(UnityEngine.Random.Range(0.0f, 5.9f));
+        if (Money >= 1)
+        {
+            moneyManager.TouchGetMoney(Money);
+        }
     }
 }
