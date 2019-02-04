@@ -25,15 +25,16 @@ public class ConfiguManager : MonoBehaviour {
 
 	public void Select(int Pnum){
 		//Debug.Log (Pnum + "を取得。");
-		Pane.SetActive (true);
 		switch (Pnum) {
 		case 0:
+			Pane.SetActive (true);
 			targetText.text = "金ちゃんと一緒に\n侵略しよう！！";
 			break;
 		case 1:
 			Pane2.SetActive (true);
 			break;
 		case 2:
+			Pane.SetActive (true);
 			targetText.text = "クレジット";
 			break;
 		}

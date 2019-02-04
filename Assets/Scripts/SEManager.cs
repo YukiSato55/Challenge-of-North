@@ -34,8 +34,10 @@ public class SEManager : MonoBehaviour {
 		//mixer.SetFloat ("MusicVolume", vol);
 	}
 
-	public void ChangeSfxVolume(float vol){
-		mixer.SetFloat ("SfxVolume", vol);
+	public void ChangeSfxVolume(float voll){
+		Debug.Log (voll);
+		gameObject.GetComponent<AudioSource> ().volume = voll/10;
+		//mixer.SetFloat ("SfxVolume", vol);
 	}
 
 
