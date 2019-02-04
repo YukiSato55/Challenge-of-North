@@ -31,7 +31,7 @@ public class ConfiguManager : MonoBehaviour {
 			targetText.text = "金ちゃんと一緒に\n侵略しよう！！";
 			break;
 		case 1:
-			targetText.text = "コンフィグ";
+			Pane2.SetActive (true);
 			break;
 		case 2:
 			targetText.text = "クレジット";
