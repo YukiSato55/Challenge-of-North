@@ -12,6 +12,10 @@ public class ConfiguManager : MonoBehaviour {
 	private GameObject Pane2;
 	[SerializeField]
 	private Text targetText;
+	[SerializeField]
+	private Text tagetText;
+	[SerializeField]
+	private GameObject Kim;
 
 	// Use this for initialization
 	void Start () {
@@ -28,14 +32,19 @@ public class ConfiguManager : MonoBehaviour {
 		switch (Pnum) {
 		case 0:
 			Pane.SetActive (true);
-			targetText.text = "金ちゃんと一緒に\n侵略しよう！！";
+			Kim.SetActive (true);
+			targetText.text = "僕と一緒に\n侵略しよう！！";
+			tagetText.text = "ぶっ潰して\nやろうか！！";
+			//Kim.sprite = "kin4";
 			break;
 		case 1:
 			Pane2.SetActive (true);
+			tagetText.text = "音量を\n変えられるよ♥";
 			break;
 		case 2:
 			Pane.SetActive (true);
 			targetText.text = "クレジット";
+			tagetText.text = "クレジット\nだよ";
 			break;
 		}
 	}
@@ -44,9 +53,12 @@ public class ConfiguManager : MonoBehaviour {
 		switch (Bnum) {
 		case 0:
 			Pane.SetActive (false);
+			Kim.SetActive (false);
+			tagetText.text = "何でも聞いてよ！";
 			break;
 		case 1:
 			Pane2.SetActive (false);
+			tagetText.text = "何でも\n聞いてよ！";
 			break;
 		}
 	}
