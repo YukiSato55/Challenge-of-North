@@ -7,6 +7,7 @@ public class JihnakiText : MonoBehaviour {
     private Text text;
     private Outline outline;
     private float alpha;
+    [SerializeField]
     private Vector3 pos;
 
 	// Use this for initialization
@@ -26,9 +27,14 @@ public class JihnakiText : MonoBehaviour {
             outline.effectColor = new Color(outline.effectColor.r, outline.effectColor.g, outline.effectColor.b, alpha-0.1f);
         } else
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
         this.gameObject.transform.Translate(0f, 0.2f, 0f);
 
 	}
+
+    public void Price(float price)
+    {
+        text.text = price + "￥";
+    }
 }

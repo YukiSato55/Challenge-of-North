@@ -44,9 +44,28 @@ public class SeiseiManager : MonoBehaviour {
 	public void OnClick()
 	{
 
-		Vector3 seisePos = Camera.main.ScreenToWorldPoint (GoMonsterButton.transform.position);
-		seisePos.z = 0;
-        if (ID != 99) {
+        RectTransform seiseiPos = GameObject.Find("GoMonsterButton").GetComponent<RectTransform>();
+        Debug.Log(seiseiPos);
+        
+        if (ID != 99)
+        {
+            bool SeiseiF = false;
+            SeiseiF = battleMoney.BuyMons(ID, SeiseiF);
+            if (SeiseiF)
+            {
+
+
+                Vector3 seisePos = GetWorldPositionFromRectPosition(seiseiPos);
+                Debug.Log(seisePos);
+                GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_" + ID);// +monsID);
+                GameObject cloneObject = (GameObject)Instantiate(MonsObject, seisePos, Quaternion.identity);
+            }
+        }
+        
+        /*
+        Vector3 seisePos = Camera.main.ScreenToWorldPoint (GoMonsterButton.transform.position);
+        seisePos.z = 0;
+            if (ID != 99) {
             //Debug.Log (posn);
             bool SeiseiF = false;
             SeiseiF = battleMoney.BuyMons(ID, SeiseiF);
@@ -59,11 +78,28 @@ public class SeiseiManager : MonoBehaviour {
                 //cloneObject.gameObject.transform.parent = canvas.transform;
             }
         }
-	}
+        */
+            
+    }
 
 	//キャラ選択
 	public void Change(int num){
 		ID = num;
 		//Debug.Log (ID + ":" + num);
 	}
+
+
+    private Vector3 GetWorldPositionFromRectPosition(RectTransform rect)
+    {
+        //UI座標からスクリーン座標に変換
+        Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, rect.position);
+
+        //ワールド座標
+        Vector3 result = Vector3.zero;
+
+        //スクリーン座標→ワールド座標に変換
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, screenPos, canvas.worldCamera, out result);
+
+        return result;
+    }
 }

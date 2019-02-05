@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class JihankiTouch : MonoBehaviour {
     [SerializeField]
+    private GameObject Textobj;
     private GameObject gameObject;
     private Vector3 pos;
-    private 
+    [SerializeField]
+    private Transform Parent;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,6 @@ public class JihankiTouch : MonoBehaviour {
 
     public void Form()
     {
-        //Instantiate(gameObject, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity, );
+        gameObject = (GameObject)Instantiate(Textobj, new Vector3(pos.x, pos.y + 30.0f, pos.z), Quaternion.identity, Parent);
     }
 }
