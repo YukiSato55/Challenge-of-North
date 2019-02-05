@@ -10,6 +10,8 @@ public class MoneySeisei : MonoBehaviour {
     private float FormMoney, Max;
     [SerializeField]
     private GameObject Tenant;
+    [SerializeField]
+    private GameObject Jihanki;
     private float NowMoney = 0;
     private const int ACTIVERESPAWN_TIME = 3;
     private const int UNDERRESPAWN_TIME = 15;

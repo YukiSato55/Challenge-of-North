@@ -39,6 +39,8 @@ public class EnemyAttackRange : MonoBehaviour
             
             if (!targetObj)
             {
+                Debug.Log("year");
+
                 //最も近かったオブジェクトを取得
                 nearObj = serchTag(gameObject, "Monster");
                 if (nearObj)
