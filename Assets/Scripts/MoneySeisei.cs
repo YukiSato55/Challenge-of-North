@@ -12,6 +12,7 @@ public class MoneySeisei : MonoBehaviour {
     private GameObject Tenant;
     [SerializeField]
     private GameObject Jihanki;
+    private JihnakiText Jtext;
     private float NowMoney = 0;
     private const int ACTIVERESPAWN_TIME = 3;
     private const int UNDERRESPAWN_TIME = 15;
@@ -22,6 +23,7 @@ public class MoneySeisei : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Jtext = Jihanki.GetComponent<JihnakiText>();
 
         //最終起動時間取得
         if (PlayerPrefs.HasKey("LastTime"))
@@ -106,14 +108,5 @@ public class MoneySeisei : MonoBehaviour {
         NowMoney = 0;
         moneyTouch.Touch();
         PlayerPrefs.SetFloat(SaveName, NowMoney);
-    }
-
-    public void JihankiTouchGet()
-    {
-        float Money = Mathf.Round(UnityEngine.Random.Range(0.0f, 5.9f));
-        if (Money >= 1)
-        {
-            moneyManager.TouchGetMoney(Money);
-        }
     }
 }

@@ -15,12 +15,12 @@ public class JihnakiText : MonoBehaviour {
         text = GetComponent<Text>();
         outline = GetComponent<Outline>();
         alpha = 1f;
-        Debug.Log(alpha);
+        Debug.Log(text);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(alpha);
+        //Debug.Log(alpha);
         if (alpha > 0) {
             alpha -= 0.05f;
             text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
@@ -32,9 +32,4 @@ public class JihnakiText : MonoBehaviour {
         this.gameObject.transform.Translate(0f, 0.2f, 0f);
 
 	}
-
-    public void Price(float price)
-    {
-        text.text = price + "￥";
-    }
 }

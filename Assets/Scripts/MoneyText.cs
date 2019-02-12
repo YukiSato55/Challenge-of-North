@@ -63,7 +63,7 @@ public class MoneyText : MonoBehaviour {
                             
                             break;
                     }
-                    Debug.Log("text" + Money);
+                    //Debug.Log("text" + Money);
                     text.text = "資金：" + Money + "/" + MaxMoney;
                 }
                 else

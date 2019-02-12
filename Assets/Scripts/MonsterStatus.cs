@@ -17,11 +17,17 @@ public class MonsterStatus : MonoBehaviour {
     private Gauge2Value gaugeValue;
     private ResultManager resultManager;
 
+    private SEManager se;
+    private BattleSEDate SEDate;
+    private AudioClip SEclip;
+
     // Use this for initialization
     void Start () {
 		renderer = GetComponent<Renderer>();
-		//GameClearText.SetActive(false);
-	}
+        se = GameObject.Find("SEManager").GetComponent<SEManager>();
+        SEDate = GameObject.Find("SEManager").GetComponent<BattleSEDate>();
+        //GameClearText.SetActive(false);
+    }
 
 	// Use this for initialization
 	void Awake () { // AwakeじゃないとsliderのStartに反映されない
@@ -44,6 +50,9 @@ public class MonsterStatus : MonoBehaviour {
 		if(MonsHP <= 0)
         {
             resultManager.Death();
+            //TakeSEはこっちから送る文字で返すやつを決める
+            SEclip = SEDate.TakeSE("Death");
+            se.GiveOnClick(SEclip);
             Destroy(this.gameObject);
         }
 	}
@@ -54,6 +63,12 @@ public class MonsterStatus : MonoBehaviour {
 		//ダメージを受けたら点滅
 		StartCoroutine ("Damage");
         gaugeValue.GaugeDamage();
+        if(MonsHP > 0)
+        {
+            //TakeSEはこっちから送る文字で返すやつを決める
+            SEclip = SEDate.TakeSE("Damage");
+            se.GiveOnClick(SEclip);
+        } 
     }
 
     public void DecisionStatus()

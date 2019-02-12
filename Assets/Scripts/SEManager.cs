@@ -28,6 +28,11 @@ public class SEManager : MonoBehaviour {
         GetSE.PlayOneShot(GetSE.clip);
     }
 
+    public void GiveOnClick(AudioClip SE)
+    {
+        GetSE.PlayOneShot(SE);
+    }
+
 	public void ChangeMusicVolume(float vol){
 		Debug.Log (vol);
 		gameObject.GetComponent<AudioSource> ().volume = vol/10;
@@ -39,7 +44,7 @@ public class SEManager : MonoBehaviour {
 		gameObject.GetComponent<AudioSource> ().volume = voll/10;
 		//mixer.SetFloat ("SfxVolume", vol);
 	}
-
+    // BGM,SEの音量数値を保存して、他のシーンでも使える様に
 
 	public float masterVolume {
 		set {

@@ -190,8 +190,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1545110776}
-        m_MethodName: JihankiTouchGet
+      - m_Target: {fileID: 59617604}
+        m_MethodName: Form
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -201,12 +201,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 59617604}
-        m_MethodName: Form
-        m_Mode: 1
+      - m_Target: {fileID: 64381532}
+        m_MethodName: GiveOnClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 467ad59422ef85f4abd2d03de9931b54,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Textobj: {fileID: 1434141948358992, guid: 29dbe34982f302c4f8af872654745ae5, type: 2}
   Parent: {fileID: 59617600}
+  Tenant2: {fileID: 1545110771}
 --- !u!1 &64381530
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +314,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 50197a6405e9713469f175b757c7f6ea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 14aa41264a4d1aa40a185a404e34855f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -755,7 +757,7 @@ MonoBehaviour:
   FormMoney: 8
   Max: 1000
   Tenant: {fileID: 711865929}
-  Jihanki: {fileID: 0}
+  Jihanki: {fileID: 1434141948358992, guid: 29dbe34982f302c4f8af872654745ae5, type: 2}
 --- !u!1 &162200063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,7 +3262,7 @@ MonoBehaviour:
   FormMoney: 45
   Max: 1500
   Tenant: {fileID: 1436795922}
-  Jihanki: {fileID: 0}
+  Jihanki: {fileID: 1434141948358992, guid: 29dbe34982f302c4f8af872654745ae5, type: 2}
 --- !u!1 &1895061765
 GameObject:
   m_ObjectHideFlags: 0
