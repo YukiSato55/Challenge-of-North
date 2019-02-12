@@ -201,7 +201,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 64381532}
         m_MethodName: GiveOnClick
         m_Mode: 2
         m_Arguments:
@@ -272,6 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64381531}
   - component: {fileID: 64381533}
+  - component: {fileID: 64381532}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -293,6 +294,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64381532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64381530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afc311f64625f248943fd715582cccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &64381533
 AudioSource:
   m_ObjectHideFlags: 0
@@ -833,12 +845,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 64381532}
+        m_MethodName: GiveOnClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 14aa41264a4d1aa40a185a404e34855f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1110,12 +1123,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 64381532}
+        m_MethodName: GiveOnClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 14aa41264a4d1aa40a185a404e34855f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1325,7 +1339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 381991862}
   - component: {fileID: 381991861}
-  - component: {fileID: 381991863}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1359,17 +1372,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &381991863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381991860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5afc311f64625f248943fd715582cccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &394781650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,12 +3092,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 64381532}
+        m_MethodName: GiveOnClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 14aa41264a4d1aa40a185a404e34855f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3840,12 +3843,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 64381532}
+        m_MethodName: GiveOnClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 14aa41264a4d1aa40a185a404e34855f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

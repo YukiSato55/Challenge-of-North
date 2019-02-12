@@ -50,7 +50,7 @@ public class WeaponSeisei : MonoBehaviour {
     {
         if(!this.name.Contains("(Clone)"))
         {
-            Debug.Log(MonsPos);
+            //Debug.Log(MonsPos);
             Vector3 diff = (MonsPos.gameObject.transform.position - this.transform.position);
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);
             Instantiate(this, new Vector3(basePos.x, basePos.y, basePos.z), transform.rotation);

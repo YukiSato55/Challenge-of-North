@@ -8,10 +8,12 @@ public class EnemyMove : MonoBehaviour {
     [SerializeField]
     private float MoveSpeed;
 
+    private Animator animator;
+
     // Use this for initialization
     void Start () {
-		
-	}
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -53,6 +55,7 @@ public class EnemyMove : MonoBehaviour {
         {
             case "Move":
                 MoveDirection = other.gameObject.GetComponent<MoveChange>().ChangeDirection;
+                animator.SetInteger("MoveChange", MoveDirection);
                 break;
 
         }
