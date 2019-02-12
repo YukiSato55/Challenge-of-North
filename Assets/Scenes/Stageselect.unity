@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6552394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -546,7 +546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &253617427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -970,7 +970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &602510566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1333,7 +1333,7 @@ RectTransform:
   - {fileID: 39782162}
   - {fileID: 1600589681}
   m_Father: {fileID: 2094001140}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2459,7 +2459,7 @@ Prefab:
     - target: {fileID: 224545705923698986, guid: 6de36ce18727cb94aa2d6f222d585958,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de36ce18727cb94aa2d6f222d585958, type: 2}
@@ -2559,8 +2559,8 @@ RectTransform:
   - {fileID: 6552394}
   - {fileID: 1895954165}
   - {fileID: 1840846758}
-  - {fileID: 2034925089}
   - {fileID: 803263617}
+  - {fileID: 2034925089}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
