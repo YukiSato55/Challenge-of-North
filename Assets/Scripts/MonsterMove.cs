@@ -13,12 +13,16 @@ public class MonsterMove : MonoBehaviour {
     // ID順　0から17
     private float[] MonsterMoveSpeed = {0.02f, 0.02f, 0.05f,0.025f,0.025f,0.015f,0.02f,0.035f,0.025f,0.015f,0.02f,0.01f,0.01f,0.02f,0.03f,0.02f,0.02f,0.035f};   
 
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
 	// Use this for initialization
 	void Start () {
 
         MonsID = GetComponent<MonsterIDManager>().MonsterID;
         MonsATK = GetComponent<MonsterStatus>().MonsATK;
-		animator = GetComponent<Animator>();
 
         resultManager = GameObject.Find("ResultManager").GetComponent<ResultManager>();
     }
@@ -67,9 +71,17 @@ public class MonsterMove : MonoBehaviour {
         {
             case "Move":
                 MoveDirection = other.gameObject.GetComponent<MoveChange>().ChangeDirection;
+                //Debug.Log(animator);
                 animator.SetInteger("MoveChange", MoveDirection);
                 break;
 
         }
+    }
+
+    public void StartMove(int Direction)
+    {
+        MoveDirection = Direction;
+        Debug.Log(animator);
+        animator.SetInteger("MoveChange", Direction);
     }
 }

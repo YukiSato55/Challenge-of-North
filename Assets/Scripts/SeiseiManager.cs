@@ -8,6 +8,10 @@ public class SeiseiManager : MonoBehaviour {
 	private Vector3 SeiseiPos;
 	//private Vector3 pos;
 	private int monsID;
+    private MonsterMove monsterMove;
+    [SerializeField]
+    private int SendDirection;
+
 
 	public Canvas canvas;
 	int ID = 99;
@@ -45,7 +49,7 @@ public class SeiseiManager : MonoBehaviour {
 	{
 
         RectTransform seiseiPos = GameObject.Find("GoMonsterButton").GetComponent<RectTransform>();
-        Debug.Log(seiseiPos);
+        //Debug.Log(seiseiPos);
         
         if (ID != 99)
         {
@@ -59,6 +63,7 @@ public class SeiseiManager : MonoBehaviour {
                 Debug.Log(seisePos);
                 GameObject MonsObject = (GameObject)Resources.Load("Monst/Monster_" + ID);// +monsID);
                 GameObject cloneObject = (GameObject)Instantiate(MonsObject, seisePos, Quaternion.identity);
+                cloneObject.GetComponent<MonsterMove>().StartMove(SendDirection);
             }
         }
         

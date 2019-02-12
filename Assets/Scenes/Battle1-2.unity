@@ -5540,6 +5540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efca6bb367ccff54181f73c5b13e0f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SendDirection: 0
   canvas: {fileID: 1867485685}
   battleMoney: {fileID: 916485134}
 --- !u!114 &859295308
@@ -15712,6 +15713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efca6bb367ccff54181f73c5b13e0f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SendDirection: 0
   canvas: {fileID: 1867485685}
   battleMoney: {fileID: 916485134}
 --- !u!1 &1767780248
