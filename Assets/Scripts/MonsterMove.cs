@@ -15,6 +15,7 @@ public class MonsterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         MonsID = GetComponent<MonsterIDManager>().MonsterID;
         MonsATK = GetComponent<MonsterStatus>().MonsATK;
 		animator = GetComponent<Animator>();
