@@ -59,4 +59,14 @@ public class BattleMenu : MonoBehaviour {
     {
         mainpanel.SetActive(true);
     }
+
+    public void GiveNonActive(GameObject gameObject)
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void GiveActive(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
+    }
 }
