@@ -49,4 +49,9 @@ public class SceneChange : MonoBehaviour {
 	public void GoTitle(){
 		SceneManager.LoadScene ("Title");
 	}
+
+    public void GiveGoScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }

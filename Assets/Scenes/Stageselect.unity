@@ -190,7 +190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6552396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114803398993681864, guid: 2350c44a1206d7c4db838b4a6416c8b6,
+          type: 2}
+        m_MethodName: GiveGoScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Battle1-3
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6552396
@@ -606,7 +618,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 253617429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114803398993681864, guid: 2350c44a1206d7c4db838b4a6416c8b6,
+          type: 2}
+        m_MethodName: GiveGoScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Battle1-2
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &253617429
@@ -1029,16 +1053,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114803398993681864, guid: 89efc8f8a502fc344bd17f70dd432717,
+      - m_Target: {fileID: 114803398993681864, guid: 2350c44a1206d7c4db838b4a6416c8b6,
           type: 2}
-        m_MethodName: Battle1
-        m_Mode: 1
+        m_MethodName: GiveGoScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Battle1-1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1147,7 +1171,7 @@ Transform:
   m_GameObject: {fileID: 618932703}
   m_LocalRotation: {x: -0, y: -0, z: -0.29532126, w: 0.955398}
   m_LocalPosition: {x: -204.73, y: -388.90002, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 253617427}
   m_RootOrder: 1
@@ -1242,7 +1266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &793871503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1683,7 +1707,7 @@ Transform:
   m_GameObject: {fileID: 1143351139}
   m_LocalRotation: {x: -0, y: -0, z: -0.76469314, w: 0.6443947}
   m_LocalPosition: {x: -92.48896, y: -411.76114, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6552394}
   m_RootOrder: 2
@@ -1895,7 +1919,7 @@ Transform:
   m_GameObject: {fileID: 1521642538}
   m_LocalRotation: {x: -0, y: -0, z: -0.76469314, w: 0.6443947}
   m_LocalPosition: {x: -92.70104, y: -411.72092, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6552394}
   m_RootOrder: 1
@@ -2153,7 +2177,7 @@ Transform:
   m_GameObject: {fileID: 1892688124}
   m_LocalRotation: {x: -0, y: -0, z: -0.29532126, w: 0.955398}
   m_LocalPosition: {x: -205.06001, y: -389.38, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 253617427}
   m_RootOrder: 2
