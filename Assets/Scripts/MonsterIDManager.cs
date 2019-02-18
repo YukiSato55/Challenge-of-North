@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterIDManager : MonoBehaviour {
     public int MonsterID;
+    public int MonsterRank;
+    private MonsterStatus monsterStatus;
 
     //モンスターID一覧
     /*
@@ -28,9 +30,19 @@ public class MonsterIDManager : MonoBehaviour {
     */ 
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Awake () {
+        monsterStatus = GetComponent<MonsterStatus>();
+        if (PlayerPrefs.HasKey("MonsRank_" + MonsterID) == true) // データがあれば
+        {
+            MonsterRank = PlayerPrefs.GetInt("MonsRank_" + MonsterID); // 読み込み
+        }
+        else
+        {
+            MonsterRank = 0;                                   // 無い場合は0で始めから
+            PlayerPrefs.SetInt("MonsRank_" + MonsterID, MonsterRank);
+        }
+        monsterStatus.DecisionStatus();
+    }
 	
 	// Update is called once per frame
 	void Update () {

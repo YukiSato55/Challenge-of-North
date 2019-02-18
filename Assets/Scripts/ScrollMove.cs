@@ -13,17 +13,24 @@ public class ScrollMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//タブの出し入れ
-		Vector3 pos = this.gameObject.transform.position;
-		//Debug.Log (pos.y);
-		if (pos.y < 100 && F == true) {
-			this.gameObject.transform.position = new Vector3 (pos.x, pos.y + 8.0f, pos.z);
-			//Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaa");
-		} else if (pos.y > -100 && F == false) {
-			this.gameObject.transform.position = new Vector3 (pos.x, pos.y - 8.0f, pos.z);
-			//Debug.Log ("bbbbbbbbbbbbbbbbbbbbbbbbb");
+        //タブの出し入れ
+        //ctor3 pos = this.gameObject.transform.position;
+        RectTransform rect = GetComponent<RectTransform>();
+        //Debug.Break();
+        
+		if (rect.anchoredPosition.y < -100 && F == true) {
+
+            rect.anchoredPosition = new Vector2 (rect.anchoredPosition.x, rect.anchoredPosition.y + 16);
+			//Debug.Log ("a" + rect.anchoredPosition.y);
+		} else if (rect.anchoredPosition.y > -540 && F == false) {
+
+            rect.anchoredPosition = new Vector2 (rect.anchoredPosition.x, rect.anchoredPosition.y - 16);
+			//Debug.Log ("b" + rect.anchoredPosition.y);
 		}
-	}
+        //Debug.Log(rect.anchoredPosition.y);
+        
+        //pos = new Vector3(pos.x, rect.anchoredPosition.y + 8.0f, pos.z);
+    }
 
 	//タブの関連
 	public void Tupon(){

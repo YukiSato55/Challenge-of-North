@@ -46,4 +46,12 @@ public class SceneChange : MonoBehaviour {
 			Debug.Log ("ステージ1-1に移動します");
 		}
 	}
+	public void GoTitle(){
+		SceneManager.LoadScene ("Title");
+	}
+
+    public void GiveGoScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }

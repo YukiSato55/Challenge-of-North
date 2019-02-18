@@ -10,8 +10,12 @@ public class MoneySeisei : MonoBehaviour {
     private float FormMoney, Max;
     [SerializeField]
     private GameObject Tenant;
+    [SerializeField]
+    private GameObject Jihanki;
+    private JihnakiText Jtext;
     private float NowMoney = 0;
-    private const int RESPAWN_TIME = 5;
+    private const int ACTIVERESPAWN_TIME = 3;
+    private const int UNDERRESPAWN_TIME = 15;
     private MoneyManager moneyManager;
     private MoneyTouch moneyTouch;
     private DateTime LastTime;
@@ -19,6 +23,7 @@ public class MoneySeisei : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Jtext = Jihanki.GetComponent<JihnakiText>();
 
         //最終起動時間取得
         if (PlayerPrefs.HasKey("LastTime"))
@@ -35,7 +40,7 @@ public class MoneySeisei : MonoBehaviour {
 
         //テナントごとの直近の保持金額ロード
         SaveName = name;
-        Debug.Log(SaveName);
+        //Debug.Log(SaveName);
         if (PlayerPrefs.HasKey(SaveName))
         {
             NowMoney = PlayerPrefs.GetFloat(SaveName);
@@ -52,19 +57,20 @@ public class MoneySeisei : MonoBehaviour {
         if (NowMoney < Max) //テナントがいっぱいじゃないとき
         {
             TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
-            Debug.Log(timeSpan);
-            if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) // 時差 >= RESPAWN_TIME
+            Debug.Log(timeSpan);                // オフラインから集計
+            if (timeSpan >= TimeSpan.FromSeconds(UNDERRESPAWN_TIME)) // 時差 >= ACTIVERESPAWN_TIME
             {
-                while (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME) && NowMoney < Max)
+                while (timeSpan >= TimeSpan.FromSeconds(UNDERRESPAWN_TIME) && NowMoney < Max)
                 {
                     Debug.Log("uuum");
                     Form();
-                    timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
+                    timeSpan -= TimeSpan.FromSeconds(UNDERRESPAWN_TIME);
                     //Debug.Log(timeSpan);
-                    if (NowMoney == Max || timeSpan < TimeSpan.FromSeconds(RESPAWN_TIME)) break;
+                    if (NowMoney == Max || timeSpan < TimeSpan.FromSeconds(UNDERRESPAWN_TIME)) break;
                 }
             }
         }
+        moneyTouch.UpdateDisplay(NowMoney, Max);
         LastTime = DateTime.UtcNow;
     }
 	
@@ -73,14 +79,14 @@ public class MoneySeisei : MonoBehaviour {
        // Debug.Log(gameObject.name + ":" + NowMoney);
 
         TimeSpan timeSpan = DateTime.UtcNow - LastTime; // 時差=現在-前回時刻
-        if (timeSpan >= TimeSpan.FromSeconds(RESPAWN_TIME)) // 時差 >= RESPAWN_TIME
+        if (timeSpan >= TimeSpan.FromSeconds(ACTIVERESPAWN_TIME)) // 時差 >= ACTIVERESPAWN_TIME
         {
             LastTime = DateTime.UtcNow;
             PlayerPrefs.SetString("LastTime", LastTime.ToBinary().ToString());
             if (NowMoney < Max) //テナントがいっぱいじゃないとき
                 {
                 Form();
-                timeSpan -= TimeSpan.FromSeconds(RESPAWN_TIME);
+                timeSpan -= TimeSpan.FromSeconds(ACTIVERESPAWN_TIME);
             }
           
         }
@@ -89,7 +95,7 @@ public class MoneySeisei : MonoBehaviour {
 
     void Form()
     {
-        //Debug.Log("増えたで" + NowMoney + " + " + FormMoney);
+        Debug.Log("増えたで" + NowMoney + " + " + FormMoney);
         NowMoney += FormMoney;
         if (NowMoney > Max) NowMoney = Max;
         moneyTouch.UpdateDisplay(NowMoney, Max);
