@@ -3706,7 +3706,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -9552,7 +9552,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -13553,7 +13553,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 76eb0054555a81948a91d2805b5fb00e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d08b1d9e9c36b2a4ba154481780eb953, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -14648,7 +14648,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1264514204}
   - component: {fileID: 1264514201}
-  - component: {fileID: 1264514203}
   - component: {fileID: 1264514202}
   m_Layer: 0
   m_Name: Main Camera
@@ -14712,13 +14711,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!81 &1264514203
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1264514200}
-  m_Enabled: 1
 --- !u!4 &1264514204
 Transform:
   m_ObjectHideFlags: 0
